@@ -12,6 +12,7 @@ export function TeamPage() {
         <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-purple-500/10" />
         <div className="absolute top-20 -right-40 w-96 h-96 bg-primary/20 rounded-full blur-3xl" />
         <div className="absolute bottom-20 -left-40 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl" />
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-gradient-to-b from-transparent via-background/70 to-background" />
 
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <motion.div
@@ -90,15 +91,15 @@ export function TeamPage() {
               
               <CardContent className="p-0 relative z-10">
                 <div className="md:flex">
-                  <div className="md:w-2/5 relative overflow-hidden">
+                  <div className="relative overflow-hidden h-72 sm:h-96 md:h-auto md:min-h-[400px] md:w-2/5">
                     <div className="absolute inset-0 scale-100 group-hover:scale-110 transition-transform duration-700 ease-out">
                       <img
                         src={teamData.pi.image}
                         alt={teamData.pi.name}
-                        className="w-full h-full object-cover min-h-[400px]"
+                        className="w-full h-full object-cover"
                       />
                     </div>
-                    <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent opacity-60 group-hover:opacity-30 transition-opacity duration-500" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-transparent via-transparent to-transparent dark:from-background dark:via-background/50 dark:to-transparent opacity-0 dark:opacity-60 group-hover:opacity-0 dark:group-hover:opacity-30 transition-opacity duration-500" />
                   </div>
                   
                   <motion.div 
@@ -222,7 +223,7 @@ export function TeamPage() {
                         className="w-full h-full object-cover object-center"
                       />
                     </div>
-                    <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-transparent via-transparent to-transparent dark:from-background dark:via-background/50 dark:to-transparent opacity-0 dark:group-hover:opacity-100 transition-opacity duration-500" />
                     <div className="absolute bottom-4 left-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex justify-center gap-2">
                       {member.social.github && (
                         <motion.a 

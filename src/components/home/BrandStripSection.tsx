@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 
 const logos = [
-  'NIT Patna', 'IIT Bombay', 'Robocon', 'DRDO', 'ISRO', 'TCS', 'IEEE', 'SAE India',
+  'NIT Patna', 'IIT Kharagpur', 'DRDO', 'ISRO', 'Kshitij', 'IEEE', 'NIT Jalandar',
 ];
 
 export function BrandStripSection() {
@@ -14,7 +14,7 @@ export function BrandStripSection() {
           viewport={{ once: true }}
           className="text-center text-sm font-medium text-muted-foreground mb-10 tracking-wide uppercase"
         >
-          Collaborations & Recognitions
+          Technical Engagements
         </motion.p>
         <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-6">
           {logos.map((logo, i) => (
