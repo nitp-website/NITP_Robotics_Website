@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useMemo, useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ChevronLeft, ChevronRight, ZoomIn, Image as ImageIcon } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -11,9 +11,27 @@ export function GalleryPage() {
   const galleryImages = getGalleryImages();
   const categories = getGalleryCategories();
 
-  const filteredImages = selectedCategory === 'All'
-    ? galleryImages
-    : galleryImages.filter((img) => img.category === selectedCategory);
+  const filteredImages = useMemo(
+    () =>
+      selectedCategory === 'All'
+        ? galleryImages
+        : galleryImages.filter((img) => img.category === selectedCategory),
+    [selectedCategory, galleryImages],
+  );
+
+  const toCloudinaryUrl = (src: string, transform: string) => {
+    if (!src.includes('res.cloudinary.com') || !src.includes('/upload/')) {
+      return src;
+    }
+
+    return src.replace('/upload/', `/upload/${transform}/`);
+  };
+
+  const getGridImageUrl = (src: string) =>
+    toCloudinaryUrl(src, 'f_auto,q_auto:good,w_900,h_900,c_fill,dpr_auto');
+
+  const getLightboxImageUrl = (src: string) =>
+    toCloudinaryUrl(src, 'f_auto,q_auto,w_1800,c_limit,dpr_auto');
 
   const handlePrevImage = () => {
     if (selectedImage !== null) {
@@ -130,21 +148,22 @@ export function GalleryPage() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.4 }}
+              transition={{ duration: 0.25 }}
               className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
             >
               {filteredImages.map((image, index) => (
-                <motion.div
+                <div
                   key={image.id}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.6, delay: index * 0.08, ease: "easeOut" }}
                   onClick={() => setSelectedImage(image.id)}
-                  className="group relative aspect-square overflow-hidden rounded-2xl cursor-pointer border-2 border-border hover:border-primary/30 transition-all duration-500"
+                  className="group relative aspect-square overflow-hidden rounded-2xl cursor-pointer border-2 border-border hover:border-primary/30 transition-all duration-300"
                 >
                   <img
-                    src={image.src}
+                    src={getGridImageUrl(image.src)}
                     alt={image.title}
+                    loading={index < 8 ? 'eager' : 'lazy'}
+                    decoding="async"
+                    fetchPriority={index < 4 ? 'high' : 'auto'}
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -157,7 +176,7 @@ export function GalleryPage() {
                       <ZoomIn className="w-6 h-6 text-white" />
                     </div>
                   </div>
-                </motion.div>
+                </div>
               ))}
             </motion.div>
           </AnimatePresence>
@@ -229,8 +248,10 @@ export function GalleryPage() {
               className="relative max-w-6xl w-full max-h-[85vh] cursor-grab active:cursor-grabbing touch-pan-y select-none"
             >
               <img
-                src={selectedImageData.src}
+                src={getLightboxImageUrl(selectedImageData.src)}
                 alt={selectedImageData.title}
+                loading="eager"
+                decoding="async"
                 className="w-full h-full object-contain rounded-2xl pointer-events-none"
               />
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6 rounded-b-2xl pointer-events-none">

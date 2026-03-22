@@ -12,8 +12,8 @@ import type {
   TeamData,
   Award,
   AwardStats,
+  AwardGalleryImage,
   GalleryImage,
-  Achievement,
   Milestone,
   Testimonial,
   Metric,
@@ -27,8 +27,8 @@ export type {
   TeamData,
   Award,
   AwardStats,
+  AwardGalleryImage,
   GalleryImage,
-  Achievement,
   Milestone,
   Testimonial,
   Metric,
@@ -134,6 +134,11 @@ export function getAwardStats(): AwardStats[] {
   return awardsData.stats as AwardStats[];
 }
 
+/** Winning moments gallery images shown on Awards page */
+export function getAwardGalleryImages(): AwardGalleryImage[] {
+  return (awardsData.winningGallery ?? []) as AwardGalleryImage[];
+}
+
 /** Unique award categories */
 export function getAwardCategories(): string[] {
   const cats = new Set((awardsData.awards as Award[]).map((a) => a.category));
@@ -167,13 +172,8 @@ export function getGalleryCategories(): string[] {
 }
 
 // ============================================
-// ABOUT (achievements, milestones, testimonials, metrics)
+// ABOUT (milestones, testimonials, metrics)
 // ============================================
-
-/** Recent achievements shown on About page */
-export function getAchievements(): Achievement[] {
-  return aboutData.achievements as Achievement[];
-}
 
 /** Club milestones / timeline */
 export function getMilestones(): Milestone[] {

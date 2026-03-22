@@ -2,108 +2,217 @@
   "awards": [
     {
       "id": 1,
-      "title": "First Prize — National Robotics Competition",
-      "description": "Our team secured first place among 120+ teams from across India in the autonomous robot navigation challenge at NRC 2025.",
+      "title": "Winners — Inter College Robowars",
+      "description": "Gold medal in Inter College Robowars after an undefeated run in all knockout rounds.",
       "year": "2025",
       "category": "Competition",
       "icon": "Trophy",
       "color": "text-amber-500 dark:text-amber-400",
       "bg": "bg-amber-500/10 dark:bg-amber-500/15",
-      "venue": "IIT Delhi"
+      "venue": "BIT Patna"
     },
     {
       "id": 2,
-      "title": "Best Innovation Award — TechFest IIT Bombay",
-      "description": "Recognized for developing a novel swarm robotics algorithm that enables decentralized multi-robot coordination in disaster scenarios.",
+      "title": "Winners — Inter College Robowars",
+      "description": "Second consecutive gold medal in Inter College Robowars, with dominant offense and control.",
       "year": "2024",
-      "category": "Innovation",
-      "icon": "Lightbulb",
-      "color": "text-violet-500 dark:text-violet-400",
-      "bg": "bg-violet-500/10 dark:bg-violet-500/15",
-      "venue": "IIT Bombay"
+      "category": "Competition",
+      "icon": "Trophy",
+      "color": "text-amber-500 dark:text-amber-400",
+      "bg": "bg-amber-500/10 dark:bg-amber-500/15",
+      "venue": "BIT Patna"
     },
     {
       "id": 3,
-      "title": "Winner — Autonomous Navigation Challenge",
-      "description": "Our autonomous ground vehicle completed the most complex urban navigation course in record time with zero penalties.",
+      "title": "Bronze Medal — Inter College Robowar",
+      "description": "Bronze medal finish at intercollege robowar against top technical institutes.",
       "year": "2024",
-      "category": "Technical",
-      "icon": "Rocket",
-      "color": "text-blue-500 dark:text-blue-400",
-      "bg": "bg-blue-500/10 dark:bg-blue-500/15",
-      "venue": "NIT Trichy"
+      "category": "Competition",
+      "icon": "Medal",
+      "color": "text-orange-500 dark:text-orange-400",
+      "bg": "bg-orange-500/10 dark:bg-orange-500/15",
+      "venue": "NIT Jalandhar"
     },
     {
       "id": 4,
-      "title": "Excellence in Research — IEEE Conference",
-      "description": "Paper on \"Reinforcement Learning for Bipedal Locomotion\" published and awarded Best Student Paper at IEEE ICRA.",
+      "title": "Winners — Inter College Robowars",
+      "description": "First gold medal in the three-year winning streak at Inter College Robowars.",
       "year": "2023",
+      "category": "Competition",
+      "icon": "Trophy",
+      "color": "text-amber-500 dark:text-amber-400",
+      "bg": "bg-amber-500/10 dark:bg-amber-500/15",
+      "venue": "BIT Patna"
+    },
+    {
+      "id": 5,
+      "title": "Patent Granted — Robotic Arm Based Cleaning Apparatue",
+      "description": "Patent granted for a Robotic Arm Based Cleaning Apparatue",
+      "year": "2024",
       "category": "Research",
       "icon": "BookOpen",
       "color": "text-emerald-500 dark:text-emerald-400",
       "bg": "bg-emerald-500/10 dark:bg-emerald-500/15",
-      "venue": "IEEE ICRA, London"
-    },
-    {
-      "id": 5,
-      "title": "Gold Medal — ABU Robocon India",
-      "description": "Designed and built a theme-based robot that outperformed participants from 25+ institutions in the national round.",
-      "year": "2023",
-      "category": "Competition",
-      "icon": "Medal",
-      "color": "text-amber-500 dark:text-amber-400",
-      "bg": "bg-amber-500/10 dark:bg-amber-500/15",
-      "venue": "MIT Pune"
+      "venue": "The Patent Office"
     },
     {
       "id": 6,
-      "title": "Smart India Hackathon — Grand Finalist",
-      "description": "Our IoT-based agricultural monitoring system was selected among the top 10 solutions nationwide in the hardware edition.",
-      "year": "2023",
-      "category": "Innovation",
-      "icon": "Cpu",
+      "title": "Patent Granted — A Line Marking Robot",
+      "description": "Patent granted for a Line Marking Robot.",
+      "year": "2025",
+      "category": "Research",
+      "icon": "Lightbulb",
       "color": "text-violet-500 dark:text-violet-400",
       "bg": "bg-violet-500/10 dark:bg-violet-500/15",
-      "venue": "SIH 2023, Bhopal"
+      "venue": "The Patent Office"
     },
     {
       "id": 7,
-      "title": "Best Technical Paper — IROS Workshop",
-      "description": "Research on visual SLAM for indoor drones presented at the International Conference on Intelligent Robots and Systems.",
-      "year": "2022",
-      "category": "Research",
-      "icon": "Globe",
-      "color": "text-emerald-500 dark:text-emerald-400",
-      "bg": "bg-emerald-500/10 dark:bg-emerald-500/15",
-      "venue": "IROS, Kyoto"
+      "title": "Winners — Robowar",
+      "description": "Won Robowar category after consistent heavy-hit performance across elimination rounds.",
+      "year": "2021",
+      "category": "Competition",
+      "icon": "Trophy",
+      "color": "text-amber-500 dark:text-amber-400",
+      "bg": "bg-amber-500/10 dark:bg-amber-500/15",
+      "venue": "State Level Robotics Meet"
     },
     {
       "id": 8,
-      "title": "Winner — Drone Racing Championship",
-      "description": "Our custom FPV racing drone finished first in the inter-college drone racing championship with the fastest lap time.",
-      "year": "2022",
-      "category": "Technical",
-      "icon": "Zap",
-      "color": "text-blue-500 dark:text-blue-400",
-      "bg": "bg-blue-500/10 dark:bg-blue-500/15",
-      "venue": "IIT Kanpur"
+      "title": "Second Place — RoboSoccer",
+      "description": "Strong team coordination earned runner-up position in fast-paced RoboSoccer finals.",
+      "year": "2021",
+      "category": "Competition",
+      "icon": "Medal",
+      "color": "text-slate-500 dark:text-slate-400",
+      "bg": "bg-slate-500/10 dark:bg-slate-500/15",
+      "venue": "Regional Robotics Tournament"
     },
     {
       "id": 9,
-      "title": "Winner — Drone Racing Championship",
-      "description": "Our custom FPV racing drone finished first in the inter-college drone racing championship with the fastest lap time.",
-      "year": "2022",
-      "category": "Research",
-      "icon": "Zap",
+      "title": "Best Design — Robowar Bot",
+      "description": "Recognized for robust frame design and impact-resistant architecture in Robowar division.",
+      "year": "2020",
+      "category": "Innovation",
+      "icon": "Lightbulb",
+      "color": "text-violet-500 dark:text-violet-400",
+      "bg": "bg-violet-500/10 dark:bg-violet-500/15",
+      "venue": "Online Inter-College Robotics Challenge"
+    },
+    {
+      "id": 10,
+      "title": "Champions — RoboRace",
+      "description": "RoboRace champions with fastest aggregate timing and zero penalty laps.",
+      "year": "2019",
+      "category": "Technical",
+      "icon": "Rocket",
       "color": "text-blue-500 dark:text-blue-400",
       "bg": "bg-blue-500/10 dark:bg-blue-500/15",
-      "venue": "IIT Kanpur"
+      "venue": "North Zone Techno Fest"
+    },
+    {
+      "id": 11,
+      "title": "Second Place — Robowar",
+      "description": "Finished runner-up in Robowar with high durability and tactical driving.",
+      "year": "2019",
+      "category": "Competition",
+      "icon": "Medal",
+      "color": "text-slate-500 dark:text-slate-400",
+      "bg": "bg-slate-500/10 dark:bg-slate-500/15",
+      "venue": "Inter-College Combat Arena"
+    },
+    {
+      "id": 12,
+      "title": "Winners — RoboSoccer",
+      "description": "Won RoboSoccer league stage and finals with excellent autonomous and manual control.",
+      "year": "2018",
+      "category": "Competition",
+      "icon": "Trophy",
+      "color": "text-amber-500 dark:text-amber-400",
+      "bg": "bg-amber-500/10 dark:bg-amber-500/15",
+      "venue": "Annual Engineering Sports-Tech Fest"
+    },
+    {
+      "id": 13,
+      "title": "Best Maneuvering Award — RoboRace",
+      "description": "Special jury recognition for precise high-speed maneuvering in tight-track race sections.",
+      "year": "2018",
+      "category": "Innovation",
+      "icon": "Star",
+      "color": "text-violet-500 dark:text-violet-400",
+      "bg": "bg-violet-500/10 dark:bg-violet-500/15",
+      "venue": "Inter-College RoboRace Circuit"
+    },
+    {
+      "id": 14,
+      "title": "Winners — Robowar",
+      "description": "Won Robowar in a high-participation bracket with consistent offensive control.",
+      "year": "2017",
+      "category": "Competition",
+      "icon": "Trophy",
+      "color": "text-amber-500 dark:text-amber-400",
+      "bg": "bg-amber-500/10 dark:bg-amber-500/15",
+      "venue": "College Robotics Carnival"
+    },
+    {
+      "id": 15,
+      "title": "Second Place — RoboRace",
+      "description": "Runner-up in RoboRace with one of the fastest single-lap timings of the event.",
+      "year": "2017",
+      "category": "Technical",
+      "icon": "Rocket",
+      "color": "text-blue-500 dark:text-blue-400",
+      "bg": "bg-blue-500/10 dark:bg-blue-500/15",
+      "venue": "Eastern India Tech Championship"
+    },
+    {
+      "id": 16,
+      "title": "Third Place — RoboSoccer",
+      "description": "First podium finish for the club in RoboSoccer at an inter-college tournament.",
+      "year": "2016",
+      "category": "Research",
+      "icon": "Medal",
+      "color": "text-emerald-500 dark:text-emerald-400",
+      "bg": "bg-emerald-500/10 dark:bg-emerald-500/15",
+      "venue": "State Inter-College Robotics Cup"
     }
   ],
   "stats": [
-    { "label": "Awards Won", "value": "25+", "icon": "Trophy" },
-    { "label": "Competitions", "value": "40+", "icon": "Medal" },
-    { "label": "Research Papers", "value": "15+", "icon": "BookOpen" },
-    { "label": "Hackathon Wins", "value": "10+", "icon": "Star" }
+    { "label": "Awards Won", "value": "16", "icon": "Trophy" },
+    { "label": "Patents", "value": "2", "icon": "Medal" },
+    { "label": "Years", "value": "10+", "icon": "BookOpen" },
+    { "label": "Hackathon", "value": "8+", "icon": "Star" }
+  ],
+  "winningGallery": [
+    {
+      "id": 1,
+      "src": "https://res.cloudinary.com/dvravcbwk/image/upload/v1774158376/DSC_0885_sgs2jc.jpg",
+      "title": "National Competition Prize Distribution",
+      "year": "2025"
+    },
+    {
+      "id": 2,
+      "src": "https://res.cloudinary.com/dvravcbwk/image/upload/v1774158376/DSC_0847_zg9ek1.jpg",
+      "title": "Team Receiving Innovation Recognition",
+      "year": "2024"
+    },
+    {
+      "id": 3,
+      "src": "https://res.cloudinary.com/dvravcbwk/image/upload/v1774158375/DSC_0857_tuw9sv.jpg",
+      "title": "Winners Circle Celebration",
+      "year": "2024"
+    },
+    {
+      "id": 4,
+      "src": "https://res.cloudinary.com/dvravcbwk/image/upload/v1774158375/DSC_0854_imxiv9.jpg",
+      "title": "Award Ceremony Highlights",
+      "year": "2023"
+    },
+    {
+      "id": 5,
+      "src": "https://res.cloudinary.com/dvravcbwk/image/upload/v1774158374/DSC_0851_ol01a2.jpg",
+      "title": "Technical Category Winners",
+      "year": "2023"
+    }
   ]
 }

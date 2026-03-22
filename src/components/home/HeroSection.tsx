@@ -133,12 +133,12 @@ export function HeroSection() {
             </div>
             <div className="w-px h-6 bg-border" />
             <div className="flex items-center gap-2">
-              <span className="font-heading font-bold text-2xl text-foreground">50+</span>
+              <span className="font-heading font-bold text-2xl text-foreground">45+</span>
               <span>Projects</span>
             </div>
             <div className="w-px h-6 bg-border hidden sm:block" />
             <div className="hidden sm:flex items-center gap-2">
-              <span className="font-heading font-bold text-2xl text-foreground">25+</span>
+              <span className="font-heading font-bold text-2xl text-foreground">15+</span>
               <span>Awards</span>
             </div>
           </motion.div>

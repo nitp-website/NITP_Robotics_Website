@@ -1,10 +1,4 @@
 {
-  "achievements": [
-    { "year": "2025", "title": "First Prize in National Robotics Competition", "category": "Competition", "icon": "Award" },
-    { "year": "2024", "title": "Best Innovation Award at TechFest IIT Bombay", "category": "Innovation", "icon": "Lightbulb" },
-    { "year": "2024", "title": "Winner - Autonomous Navigation Challenge", "category": "Technical", "icon": "Rocket" },
-    { "year": "2023", "title": "Excellence in Research - IEEE Conference", "category": "Research", "icon": "BookOpen" }
-  ],
   "milestones": [
     { "year": "2015-16", "event": "Club Founded at NIT Patna", "description": "Founded under the guidance of Nripendra Saroj Sir.", "icon": "Heart" },
     { "year": "2021", "event": "Online Community Events Scale-Up", "description": "Ran major online events and expanded student outreach.", "icon": "Users" },
@@ -34,8 +28,8 @@
   ],
   "metrics": [
     { "value": 100, "suffix": "+", "label": "Active Members", "description": "All branches and years" },
-    { "value": 50, "suffix": "+", "label": "Projects Built", "description": "Hardware, software, research" },
-    { "value": 25, "suffix": "+", "label": "Awards Won", "description": "National and international" },
+    { "value": 45, "suffix": "+", "label": "Projects Built", "description": "Hardware, software, research" },
+    { "value": 15, "suffix": "+", "label": "Awards Won", "description": "National and international" },
     { "value": 10, "suffix": "+", "label": "Years of Legacy", "description": "Since founding" }
   ]
 }

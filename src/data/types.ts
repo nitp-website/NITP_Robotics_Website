@@ -6,6 +6,7 @@ export interface Project {
   id: number;
   title: string;
   description: string;
+  detailedDescription: string;
   image: string;
   category: string;
   tags: string[];
@@ -19,6 +20,7 @@ export interface Event {
   id: number;
   title: string;
   description: string;
+  detailedDescription: string;
   date: string;
   time: string;
   location: string;
@@ -99,19 +101,18 @@ export interface AwardStats {
   icon: string;
 }
 
+export interface AwardGalleryImage {
+  id: number;
+  src: string;
+  title: string;
+  year: string;
+}
+
 export interface GalleryImage {
   id: number;
   src: string;
   category: string;
   title: string;
-}
-
-export interface Achievement {
-  year: string;
-  title: string;
-  category: string;
-  /** Icon name from lucide-react */
-  icon: string;
 }
 
 export interface Milestone {
