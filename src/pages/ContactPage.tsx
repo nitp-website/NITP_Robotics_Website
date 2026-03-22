@@ -41,14 +41,14 @@ export function ContactPage() {
     {
       icon: MapPin,
       title: 'Visit Us',
-      content: ['National Institute of Technology Patna', 'Ashok Rajpath, Patna', 'Bihar 800005, India'],
+      content: ['National Institute of Technology Patna', 'Bihta, Patna - 801103, Bihar, IN'],
       color: 'text-blue-500 dark:text-blue-400',
       bg: 'bg-blue-500/10 dark:bg-blue-500/15',
     },
     {
       icon: Mail,
       title: 'Email Us',
-      content: ['robotics@nitp.ac.in', 'info@nitproboticsclub.in'],
+      content: ['roboticsclub@nitp.ac.in', 'ankita.ug23.ec@nitp.ac.in'],
       color: 'text-violet-500 dark:text-violet-400',
       bg: 'bg-violet-500/10 dark:bg-violet-500/15',
       links: true
@@ -56,7 +56,7 @@ export function ContactPage() {
     {
       icon: Phone,
       title: 'Call Us',
-      content: ['+91 612 237 1715', '+91 612 237 2715'],
+      content: ['Aarav: +91 82528 62360', 'Ankit Anand: +91 79038 28567'],
       color: 'text-amber-500 dark:text-amber-400',
       bg: 'bg-amber-500/10 dark:bg-amber-500/15',
       links: true
