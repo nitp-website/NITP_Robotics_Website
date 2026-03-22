@@ -75,7 +75,7 @@
       }
     },
     {
-      "name": "Mohd Afzal ",
+      "name": "Mohd Afzal",
       "role": "Coordinator",
       "year": "Second Year, ECE",
       "image": "https://res.cloudinary.com/dvravcbwk/image/upload/v1774153992/WhatsApp_Image_2026-03-17_at_2.35.49_PM_d1k6mt.jpg",
@@ -84,6 +84,18 @@
       "social": {
         "github": "#",
         "linkedin": "#"
+      }
+    },
+    {
+      "name": "Shreya Kumari",
+      "role": "Coordinator",
+      "year": "Third Year, ECE",
+      "image": "https://res.cloudinary.com/dvravcbwk/image/upload/v1774198440/WhatsApp_Image_2026-03-22_at_10.08.25_PM_w6yo3o.jpg",
+      "bio": "Ensuring smooth financial management",
+      "email": "shreyak.ug23.ec@nitp.ac.in",
+      "social": {
+        "github": "https://github.com/Shreya0Kumari",
+        "linkedin": "https://www.linkedin.com/in/shreya-kumari-6b5410214"
       }
     }
   ],
@@ -136,8 +148,8 @@
     { "name": "Mahesh Kumawat", "year": "Second Year, ECE", "domain": "Hardware" },
     { "name": "Biswajit Mondal", "year": "Second Year, CSE", "domain": "Software" },
     { "name": "Yogesh Dhakad", "year": "Second Year, ECE", "domain": "Design" },
-    { "name": "Shivam Singh", "year": "First Year, CSE", "domain": "Technical" },
-    { "name": "Nitin Singh", "year": "First Year, CSE", "domain": "Web Dev" },
+    { "name": "Aditya Mishra", "year": "Second Year, ECE", "domain": "Technical" },
+    { "name": "Kajal Kumari", "year": "Third Year, ECE", "domain": "Content" },
     { "name": "Prem Kumar", "year": "First Year, CSE", "domain": "Computer Vision" },
     { "name": "Niharika", "year": "First Year, ECE", "domain": "IoT" }
   ]
