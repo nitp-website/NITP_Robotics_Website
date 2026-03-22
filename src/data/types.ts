@@ -101,6 +101,13 @@ export interface AwardStats {
   icon: string;
 }
 
+export interface AwardGalleryImage {
+  id: number;
+  src: string;
+  title: string;
+  year: string;
+}
+
 export interface GalleryImage {
   id: number;
   src: string;

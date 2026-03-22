@@ -1,9 +1,8 @@
 import { useState, useRef, useEffect } from 'react';
 import { motion, useInView } from 'framer-motion';
 import { Card, CardContent } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Award, Trophy } from 'lucide-react';
-import { getAwards, getAwardStats, getAwardCategories, getAwardYears, getAwardsByYear, resolveIcon } from '@/data';
+import { Trophy, ChevronLeft, ChevronRight } from 'lucide-react';
+import { getAwardStats, getAwardYears, getAwardsByYear, getAwardGalleryImages, resolveIcon } from '@/data';
 
 function AnimatedCounter({ value }: { value: string }) {
   const ref = useRef(null);
@@ -30,16 +29,25 @@ function AnimatedCounter({ value }: { value: string }) {
 }
 
 export function AwardsPage() {
-  const [selectedCategory, setSelectedCategory] = useState('All');
+  const [galleryIndex, setGalleryIndex] = useState(0);
 
-  const awards = getAwards();
   const stats = getAwardStats();
-  const categories = getAwardCategories();
+  const winningGalleryImages = getAwardGalleryImages();
   const awardYears = getAwardYears();
 
-  const filteredAwards = selectedCategory === 'All'
-    ? awards
-    : awards.filter((a) => a.category === selectedCategory);
+  const handlePrevGalleryImage = () => {
+    if (winningGalleryImages.length === 0) return;
+    setGalleryIndex((prev) =>
+      prev > 0 ? prev - 1 : winningGalleryImages.length - 1,
+    );
+  };
+
+  const handleNextGalleryImage = () => {
+    if (winningGalleryImages.length === 0) return;
+    setGalleryIndex((prev) =>
+      prev < winningGalleryImages.length - 1 ? prev + 1 : 0,
+    );
+  };
 
   return (
     <div className="min-h-screen overflow-hidden">
@@ -105,78 +113,90 @@ export function AwardsPage() {
         </div>
       </section>
 
-      {/* Filters */}
-      <section className="py-16">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="flex items-center justify-center gap-3 flex-wrap mb-12"
-          >
-            {categories.map((category) => (
-              <motion.div
-                key={category}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                <Button
-                  variant={selectedCategory === category ? 'default' : 'outline'}
-                  onClick={() => setSelectedCategory(category)}
-                  className="rounded-full px-6 transition-all duration-300"
-                >
-                  {category}
-                </Button>
-              </motion.div>
-            ))}
-          </motion.div>
+      {/* Winning Moments Gallery */}
+      {winningGalleryImages.length > 0 && (
+        <section className="mt-32 py-8 sm:py-12">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-100px' }}
+              transition={{ duration: 0.8, ease: 'easeOut' }}
+              className="text-center max-w-3xl mx-auto mb-10"
+            >
+              <span className="text-sm font-semibold text-primary uppercase tracking-wider">Winning Moments</span>
+              <h2 className="text-3xl sm:text-4xl font-heading font-bold mt-3 mb-4">Our Victory Gallery</h2>
+            </motion.div>
 
-          {/* Awards Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-            {filteredAwards.map((award, index) => {
-              const Icon = resolveIcon(award.icon);
-              return (
+            <div className="relative max-w-5xl mx-auto">
+              <div className="overflow-hidden rounded-2xl border border-border/60 bg-card/70 backdrop-blur-sm">
                 <motion.div
-                  key={award.id}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: '-50px' }}
-                  transition={{ duration: 0.8, delay: index * 0.1, ease: 'easeOut' }}
-                  layout
+                  animate={{ x: `-${galleryIndex * 100}%` }}
+                  transition={{ duration: 0.45, ease: 'easeInOut' }}
+                  className="flex"
                 >
-                  <Card className="h-full border border-border/50 hover:border-primary/30 transition-all duration-500 group hover:shadow-xl hover:-translate-y-1 bg-card/80 backdrop-blur-sm">
-                    <CardContent className="p-7">
-                      <div className="flex items-start gap-5">
-                        <div className={`inline-flex items-center justify-center w-12 h-12 rounded-xl ${award.bg} flex-shrink-0`}>
-                          <Icon className={`w-6 h-6 ${award.color}`} />
-                        </div>
-                        <div className="flex-1 min-w-0">
-                          <div className="flex items-center gap-3 mb-2 flex-wrap">
-                            <span className={`text-sm font-semibold ${award.color}`}>{award.year}</span>
-                            <span className={`text-xs px-2.5 py-1 rounded-full ${award.bg} ${award.color} font-medium`}>
-                              {award.category}
-                            </span>
-                          </div>
-                          <h3 className="text-lg font-heading font-semibold leading-snug mb-2 group-hover:text-foreground/80 transition-colors">
-                            {award.title}
+                  {winningGalleryImages.map((image) => (
+                    <div key={image.id} className="w-full flex-shrink-0">
+                      <div className="relative aspect-[16/10] sm:aspect-[16/9]">
+                        <img
+                          src={image.src}
+                          alt={image.title}
+                          className="w-full h-full object-cover"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                        <div className="absolute bottom-0 left-0 right-0 p-5 sm:p-6">
+                          <span className="inline-flex px-2.5 py-1 rounded-full text-xs font-semibold bg-primary/20 text-primary border border-primary/30 mb-2">
+                            {image.year}
+                          </span>
+                          <h3 className="text-white font-heading font-semibold text-lg sm:text-xl">
+                            {image.title}
                           </h3>
-                          <p className="text-sm text-muted-foreground leading-relaxed mb-3">
-                            {award.description}
-                          </p>
-                          <div className="flex items-center gap-1.5 text-xs text-muted-foreground/70">
-                            <Award className="w-3.5 h-3.5" />
-                            <span>{award.venue}</span>
-                          </div>
                         </div>
                       </div>
-                    </CardContent>
-                  </Card>
+                    </div>
+                  ))}
                 </motion.div>
-              );
-            })}
+              </div>
+
+              <div className="absolute inset-y-0 left-0 flex items-center pl-2 sm:pl-3">
+                <button
+                  type="button"
+                  onClick={handlePrevGalleryImage}
+                  className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-black/50 hover:bg-black/70 text-white backdrop-blur-sm border border-white/20 transition-colors flex items-center justify-center"
+                  aria-label="Previous winning image"
+                >
+                  <ChevronLeft className="w-5 h-5" />
+                </button>
+              </div>
+
+              <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:pr-3">
+                <button
+                  type="button"
+                  onClick={handleNextGalleryImage}
+                  className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-black/50 hover:bg-black/70 text-white backdrop-blur-sm border border-white/20 transition-colors flex items-center justify-center"
+                  aria-label="Next winning image"
+                >
+                  <ChevronRight className="w-5 h-5" />
+                </button>
+              </div>
+
+              <div className="flex items-center justify-center gap-2 mt-5">
+                {winningGalleryImages.map((image, index) => (
+                  <button
+                    key={image.id}
+                    type="button"
+                    onClick={() => setGalleryIndex(index)}
+                    className={`h-2.5 rounded-full transition-all ${
+                      index === galleryIndex ? 'w-8 bg-primary' : 'w-2.5 bg-muted-foreground/40 hover:bg-muted-foreground/60'
+                    }`}
+                    aria-label={`Go to winning image ${index + 1}`}
+                  />
+                ))}
+              </div>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* Timeline Section */}
       <section className="section-padding relative overflow-hidden">

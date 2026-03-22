@@ -105,5 +105,37 @@
     { "label": "Competitions", "value": "40+", "icon": "Medal" },
     { "label": "Research Papers", "value": "15+", "icon": "BookOpen" },
     { "label": "Hackathon Wins", "value": "10+", "icon": "Star" }
+  ],
+  "winningGallery": [
+    {
+      "id": 1,
+      "src": "https://res.cloudinary.com/dvravcbwk/image/upload/v1774158376/DSC_0885_sgs2jc.jpg",
+      "title": "National Competition Prize Distribution",
+      "year": "2025"
+    },
+    {
+      "id": 2,
+      "src": "https://res.cloudinary.com/dvravcbwk/image/upload/v1774158376/DSC_0847_zg9ek1.jpg",
+      "title": "Team Receiving Innovation Recognition",
+      "year": "2024"
+    },
+    {
+      "id": 3,
+      "src": "https://res.cloudinary.com/dvravcbwk/image/upload/v1774158375/DSC_0857_tuw9sv.jpg",
+      "title": "Winners Circle Celebration",
+      "year": "2024"
+    },
+    {
+      "id": 4,
+      "src": "https://res.cloudinary.com/dvravcbwk/image/upload/v1774158375/DSC_0854_imxiv9.jpg",
+      "title": "Award Ceremony Highlights",
+      "year": "2023"
+    },
+    {
+      "id": 5,
+      "src": "https://res.cloudinary.com/dvravcbwk/image/upload/v1774158374/DSC_0851_ol01a2.jpg",
+      "title": "Technical Category Winners",
+      "year": "2023"
+    }
   ]
 }

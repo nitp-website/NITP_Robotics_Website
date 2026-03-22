@@ -12,6 +12,7 @@ import type {
   TeamData,
   Award,
   AwardStats,
+  AwardGalleryImage,
   GalleryImage,
   Achievement,
   Milestone,
@@ -27,6 +28,7 @@ export type {
   TeamData,
   Award,
   AwardStats,
+  AwardGalleryImage,
   GalleryImage,
   Achievement,
   Milestone,
@@ -132,6 +134,11 @@ export function getAwards(): Award[] {
 /** Award stat counters */
 export function getAwardStats(): AwardStats[] {
   return awardsData.stats as AwardStats[];
+}
+
+/** Winning moments gallery images shown on Awards page */
+export function getAwardGalleryImages(): AwardGalleryImage[] {
+  return (awardsData.winningGallery ?? []) as AwardGalleryImage[];
 }
 
 /** Unique award categories */
