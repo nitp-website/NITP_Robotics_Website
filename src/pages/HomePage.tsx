@@ -15,8 +15,8 @@ export function HomePage() {
       <HeroSection />
       <BrandStripSection />
       <ValuePropsSection />
-      {/* <MetricsSection /> */}
-      {/* <ProjectsShowcaseSection /> */}
+      <MetricsSection />
+      <ProjectsShowcaseSection />
       <ProcessSection />
       <EventsSpotlightSection />
       <TestimonialsSection />

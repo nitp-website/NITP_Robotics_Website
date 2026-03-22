@@ -306,6 +306,288 @@ export function AboutPage() {
           </div>
         </div>
       </section>
+
+      {/* Timeline */}
+      <section className="section-padding">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="text-center max-w-3xl mx-auto mb-20"
+          >
+            <span className="text-sm font-semibold text-primary uppercase tracking-wider">Journey</span>
+            <h2 className="text-4xl sm:text-5xl font-heading font-bold mt-4 mb-6">
+              Our Milestones
+            </h2>
+            <p className="text-lg text-muted-foreground">
+              A decade of achievements, growth, and technological excellence
+            </p>
+          </motion.div>
+
+          <div className="relative">
+            {/* Desktop: Horizontal Timeline */}
+            <div className="hidden lg:block">
+              {/* Scrollable wrapper — handles any number of milestones */}
+              <div className="overflow-x-auto pb-4 -mx-4 px-4 scrollbar-hide">
+                <div
+                  style={{ minWidth: `${milestones.length * 220}px` }}
+                >
+                  {/* Top row - cards for even indices (0, 2, 4, …) */}
+                  <div
+                    className="gap-6 mb-6"
+                    style={{ display: 'grid', gridTemplateColumns: `repeat(${milestones.length}, minmax(0, 1fr))` }}
+                  >
+                    {milestones.map((milestone, index) => {
+                      const isTop = index % 2 === 0;
+                      return (
+                        <motion.div
+                          key={`top-${milestone.year}`}
+                          initial={{ opacity: 0, y: isTop ? -30 : 0 }}
+                          whileInView={{ opacity: isTop ? 1 : 0, y: 0 }}
+                          viewport={{ once: true, margin: "-50px" }}
+                          transition={{ duration: 0.8, delay: index * 0.12, ease: "easeOut" }}
+                          className={isTop ? '' : 'invisible'}
+                        >
+                          <Card className="border border-border/50 hover:border-primary/30 transition-all duration-500 group hover:shadow-xl hover:shadow-primary/5 hover:-translate-y-1 bg-card/80 backdrop-blur-sm">
+                            <CardContent className="p-6">
+                              <span className="text-xl font-bold text-primary">{milestone.year}</span>
+                              <h3 className="text-base font-heading font-semibold mt-2 mb-2 group-hover:text-primary transition-colors leading-snug">{milestone.event}</h3>
+                              <p className="text-sm text-muted-foreground leading-relaxed">{milestone.description}</p>
+                            </CardContent>
+                          </Card>
+                        </motion.div>
+                      );
+                    })}
+                  </div>
+
+                  {/* Connecting lines from top cards */}
+                  <div
+                    className="gap-6"
+                    style={{ display: 'grid', gridTemplateColumns: `repeat(${milestones.length}, minmax(0, 1fr))` }}
+                  >
+                    {milestones.map((_, index) => (
+                      <div key={`line-top-${index}`} className="flex justify-center">
+                        {index % 2 === 0 ? (
+                          <div className="w-px h-12 bg-gradient-to-b from-primary/30 to-primary/60" />
+                        ) : (
+                          <div className="h-12" />
+                        )}
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Middle row - horizontal line with icons */}
+                  <div className="relative">
+                    <div className="absolute top-1/2 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent -translate-y-1/2" />
+                    <div
+                      className="gap-6"
+                      style={{ display: 'grid', gridTemplateColumns: `repeat(${milestones.length}, minmax(0, 1fr))` }}
+                    >
+                      {milestones.map((milestone, index) => {
+                        const Icon = resolveIcon(milestone.icon);
+                        return (
+                          <motion.div
+                            key={`node-${milestone.year}`}
+                            initial={{ opacity: 0, scale: 0 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            viewport={{ once: true, margin: "-50px" }}
+                            transition={{ duration: 0.5, delay: index * 0.1, ease: "easeOut" }}
+                            className="flex justify-center"
+                          >
+                            <motion.div
+                              whileHover={{ scale: 1.15 }}
+                              transition={{ duration: 0.3 }}
+                              className="w-14 h-14 rounded-full bg-gradient-to-br from-primary/90 to-purple-600/90 flex items-center justify-center shadow-lg shadow-primary/25 ring-[3px] ring-background relative z-10"
+                            >
+                              <Icon size={22} className="text-white" strokeWidth={2} />
+                            </motion.div>
+                          </motion.div>
+                        );
+                      })}
+                    </div>
+                  </div>
+
+                  {/* Connecting lines to bottom cards */}
+                  <div
+                    className="gap-6"
+                    style={{ display: 'grid', gridTemplateColumns: `repeat(${milestones.length}, minmax(0, 1fr))` }}
+                  >
+                    {milestones.map((_, index) => (
+                      <div key={`line-bot-${index}`} className="flex justify-center">
+                        {index % 2 !== 0 ? (
+                          <div className="w-px h-12 bg-gradient-to-b from-primary/60 to-primary/30" />
+                        ) : (
+                          <div className="h-12" />
+                        )}
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Bottom row - cards for odd indices (1, 3, 5, …) */}
+                  <div
+                    className="gap-6 mt-0"
+                    style={{ display: 'grid', gridTemplateColumns: `repeat(${milestones.length}, minmax(0, 1fr))` }}
+                  >
+                    {milestones.map((milestone, index) => {
+                      const isBottom = index % 2 !== 0;
+                      return (
+                        <motion.div
+                          key={`bot-${milestone.year}`}
+                          initial={{ opacity: 0, y: isBottom ? 30 : 0 }}
+                          whileInView={{ opacity: isBottom ? 1 : 0, y: 0 }}
+                          viewport={{ once: true, margin: "-50px" }}
+                          transition={{ duration: 0.8, delay: index * 0.12, ease: "easeOut" }}
+                          className={isBottom ? '' : 'invisible'}
+                        >
+                          <Card className="border border-border/50 hover:border-primary/30 transition-all duration-500 group hover:shadow-xl hover:shadow-primary/5 hover:translate-y-1 bg-card/80 backdrop-blur-sm">
+                            <CardContent className="p-6">
+                              <span className="text-xl font-bold text-primary">{milestone.year}</span>
+                              <h3 className="text-base font-heading font-semibold mt-2 mb-2 group-hover:text-primary transition-colors leading-snug">{milestone.event}</h3>
+                              <p className="text-sm text-muted-foreground leading-relaxed">{milestone.description}</p>
+                            </CardContent>
+                          </Card>
+                        </motion.div>
+                      );
+                    })}
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Mobile/Tablet: Vertical Timeline */}
+            <div className="lg:hidden max-w-2xl mx-auto">
+              <div className="relative">
+                <div className="absolute left-[19px] top-0 bottom-0 w-px bg-gradient-to-b from-primary/20 via-primary/40 to-primary/20" />
+                
+                <div className="space-y-10">
+                  {milestones.map((milestone, index) => {
+                    const Icon = resolveIcon(milestone.icon);
+                    return (
+                      <motion.div
+                        key={milestone.year}
+                        initial={{ opacity: 0, x: -30 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true, margin: "-50px" }}
+                        transition={{ duration: 0.8, delay: index * 0.1, ease: "easeOut" }}
+                        className="relative flex gap-6 items-start"
+                      >
+                        <div className="flex-shrink-0 relative z-10">
+                          <motion.div
+                            whileHover={{ scale: 1.15 }}
+                            transition={{ duration: 0.3 }}
+                            className="w-12 h-12 rounded-full bg-gradient-to-br from-primary/90 to-purple-600/90 flex items-center justify-center shadow-lg shadow-primary/25 ring-[3px] ring-background"
+                          >
+                            <Icon size={18} className="text-white" strokeWidth={2} />
+                          </motion.div>
+                        </div>
+
+                        <Card className="flex-1 border border-border/50 hover:border-primary/30 transition-all duration-500 group hover:shadow-xl hover:shadow-primary/5 bg-card/80 backdrop-blur-sm">
+                          <CardContent className="p-6">
+                            <span className="text-xl font-bold text-primary">{milestone.year}</span>
+                            <h3 className="text-lg font-heading font-semibold mt-2 mb-2 group-hover:text-primary transition-colors">{milestone.event}</h3>
+                            <p className="text-base text-muted-foreground leading-relaxed">{milestone.description}</p>
+                          </CardContent>
+                        </Card>
+                      </motion.div>
+                    );
+                  })}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Achievements */}
+      <section className="section-padding relative overflow-hidden">
+        <div className="absolute top-20 right-0 w-80 h-80 bg-primary/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-20 left-0 w-80 h-80 bg-purple-500/5 rounded-full blur-3xl" />
+        
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="text-center max-w-3xl mx-auto mb-16"
+          >
+            <span className="text-sm font-semibold text-primary uppercase tracking-wider">Recognition</span>
+            <h2 className="text-4xl sm:text-5xl font-heading font-bold mt-4 mb-6">
+              Recent Achievements
+            </h2>
+            <p className="text-lg text-muted-foreground">
+              Celebrating our victories and recognitions in competitions and research
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+            {achievements.map((achievement, index) => {
+              const Icon = resolveIcon(achievement.icon);
+              const accentColors = [
+                { 
+                  color: 'text-blue-500 dark:text-blue-400',
+                  bg: 'bg-blue-500/10 dark:bg-blue-500/15',
+                  text: 'text-blue-500',
+                  border: 'hover:border-blue-500/30',
+                  badgeBg: 'bg-blue-500/10',
+                },
+                { 
+                  color: 'text-violet-500 dark:text-violet-400',
+                  bg: 'bg-violet-500/10 dark:bg-violet-500/15',
+                  text: 'text-violet-500',
+                  border: 'hover:border-violet-500/30',
+                  badgeBg: 'bg-violet-500/10',
+                },
+                { 
+                  color: 'text-amber-500 dark:text-amber-400',
+                  bg: 'bg-amber-500/10 dark:bg-amber-500/15',
+                  text: 'text-amber-500',
+                  border: 'hover:border-amber-500/30',
+                  badgeBg: 'bg-amber-500/10',
+                },
+                { 
+                  color: 'text-emerald-500 dark:text-emerald-400',
+                  bg: 'bg-emerald-500/10 dark:bg-emerald-500/15',
+                  text: 'text-emerald-500',
+                  border: 'hover:border-emerald-500/30',
+                  badgeBg: 'bg-emerald-500/10',
+                },
+              ];
+              const color = accentColors[index % accentColors.length];
+              return (
+                <motion.div
+                  key={achievement.year + achievement.title}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ duration: 0.8, delay: index * 0.12, ease: "easeOut" }}
+                >
+                  <Card className={`h-full border border-border/50 ${color.border} transition-all duration-500 group hover:shadow-xl hover:-translate-y-1 bg-card/80 backdrop-blur-sm`}>
+                    <CardContent className="p-7">
+                      <div className="flex items-start gap-5">
+                        <div className={`inline-flex items-center justify-center w-12 h-12 rounded-xl ${color.bg} flex-shrink-0`}>
+                          <Icon className={`w-6 h-6 ${color.color}`} />
+                        </div>
+                        <div className="flex-1 min-w-0">
+                          <div className="flex items-center gap-3 mb-2 flex-wrap">
+                            <span className={`text-sm font-semibold ${color.text}`}>{achievement.year}</span>
+                            <span className={`text-xs px-2.5 py-1 rounded-full ${color.badgeBg} ${color.text} font-medium`}>
+                              {achievement.category}
+                            </span>
+                          </div>
+                          <h3 className="text-lg font-heading font-semibold leading-snug group-hover:text-foreground/80 transition-colors">{achievement.title}</h3>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

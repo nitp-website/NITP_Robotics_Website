@@ -16,21 +16,21 @@
   "testimonials": [
     {
       "quote": "The Robotics Club completely transformed my engineering career. The hands-on projects gave me skills no classroom ever could.",
-      "name": "Pranay",
-      "role": "President",
-      "company": "NIT PATNA"
+      "name": "Arjun Mehta",
+      "role": "Ex-President, Batch of 2023",
+      "company": "Now at Boston Dynamics"
     },
     {
       "quote": "From building my first line-follower to leading a team at Robocon — this club gave me purpose and direction.",
-      "name": "Ankit Anand",
-      "role": "Vice President",
-      "company": "NIT PATNA"
+      "name": "Priya Sharma",
+      "role": "Core Team, Batch of 2024",
+      "company": "Researcher at IIT Delhi"
     },
     {
       "quote": "The mentorship culture here is unmatched. Seniors actually sit down and debug with you at 2 AM before competitions.",
-      "name": "Smita Kumari",
-      "role": "Content Lead",
-      "company": "NIT PATNA"
+      "name": "Rahul Kumar",
+      "role": "Technical Lead, Batch of 2024",
+      "company": "SDE at Amazon Robotics"
     }
   ],
   "metrics": [

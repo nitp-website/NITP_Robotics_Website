@@ -1,82 +1,62 @@
 {
   "pi": {
-    "name": "Dr. Anupam Kumar",
+    "name": "Dr. Rajesh Kumar",
     "role": "Professor In-charge",
-    "department": "Dept of Electronics and Communication Engineering",
-    "image": "PI_robotics_club.jpg",
-    "bio": "Leading research in robotics and automation with experience",
-    "email": "Anupam.ec@nitp.ac.in",
+    "department": "Department of Electrical Engineering",
+    "image": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&auto=format&fit=crop",
+    "bio": "Leading research in robotics and automation with 15+ years of experience",
+    "email": "rajesh.kumar@nitp.ac.in",
     "social": {
-      "linkedin": "https://www.linkedin.com/feed/"
+      "linkedin": "#",
+      "twitter": "#"
     }
   },
   "executives": [
     {
-      "name": "Pranav",
+      "name": "Arjun Sharma",
       "role": "President",
-      "year": "Third Year, CSE",
+      "year": "Final Year, CSE",
       "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&auto=format&fit=crop",
       "bio": "Leading the club with a vision for innovation",
       "email": "arjun@student.nitp.ac.in",
       "social": {
         "github": "#",
-        "linkedin": "#"
+        "linkedin": "#",
+        "twitter": "#"
       }
     },
     {
-      "name": "Ankit Anand",
+      "name": "Priya Singh",
       "role": "Vice President",
-      "year": "Third Year, ECE(DD-ME-VLSI)",
-      "image": "vice_president.jpeg",
+      "year": "Final Year, ECE",
+      "image": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&auto=format&fit=crop",
       "bio": "Passionate about AI and embedded systems",
       "email": "priya@student.nitp.ac.in",
-      "social": { 
+      "social": {
         "github": "#",
-        "linkedin": "#"
+        "linkedin": "#",
+        "twitter": "#"
       }
     },
     {
-      "name": "Adarsh Aarav",
+      "name": "Rahul Verma",
       "role": "Secretary",
-      "year": "Second Year, CSE",
-      "image": "secretary.jpeg",
-      "bio": "Managing operations and leading the tech",
-      "email": "adarsha.ug24.cs@nitp.ac.in",
-      "social": {
-        "github": "https://github.com/adarshaaravvv",
-        "linkedin": "https://www.linkedin.com/in/adarsh-aaravvvvvvvvv/"
-      }
-    },
-    {
-      "name": "Shourya",
-      "role": "Joint Secretary",
-      "year": "Second Year, CSE",
-      "image": "vide_secretary.jpeg",
+      "year": "Third Year, EE",
+      "image": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&auto=format&fit=crop",
       "bio": "Managing operations and coordinating events",
-      "email": "kumarssh.ug24.cs@nitp.ac.in",
+      "email": "rahul@student.nitp.ac.in",
       "social": {
-        "github": "https://github.com/KumarShourya001",
-        "linkedin": "linkedin.com/in/kumar-shourya"
+        "github": "#",
+        "linkedin": "#",
+        "twitter": "#"
       }
     },
     {
-      "name": "Aditya Narayan",
-      "role": "Coordinator",
-      "year": "Second Year, ECE(DD-ME-VLSI)",
-      "image": "coordinator.jpeg",
-      "bio": "Managing operations and leading the web",
-      "email": "adityan.dd24.ec@nitp.ac.in",
-      "social": {
-        "github": "https://github.com/aditya-narayan007",
-        "linkedin": "www.linkedin.com/in/narayanaditya178"
-      }
-    },
-    {
-      "name": "Mohd Afzal",
-      "role": "Coordinator",
-      "year": "Second Year, ECE",
-      "image": "coordinator2.jpeg",
-      "bio": "Managing operations and leading the design",
+      "name": "Sneha Patel",
+      "role": "Treasurer",
+      "year": "Third Year, ME",
+      "image": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&auto=format&fit=crop",
+      "bio": "Ensuring smooth financial management",
       "email": "sneha@student.nitp.ac.in",
       "social": {
         "github": "#",
@@ -86,46 +66,63 @@
   ],
   "coreTeam": [
     {
-      "name": "Adarsh Aarav",
+      "name": "Amit Kumar",
       "role": "Technical Lead",
-      "year": "Second Year, CSE",
-      "image": "secretary.jpeg",
-      "domain": "Technical"
+      "year": "Third Year, CSE",
+      "image": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&auto=format&fit=crop",
+      "domain": "AI & ML"
     },
     {
-      "name": "Aditya Narayan",
-      "role": "Web Developer",
-      "year": "Second Year, ECE",
-      "image": "coordinator.jpeg",
-      "domain": "Web Development"
-    },
-    {
-      "name": "Shourya",
-      "role": "Project Lead",
-      "year": "Second Year, CSE",
-      "image": "vide_secretary.jpeg",
+      "name": "Ananya Gupta",
+      "role": "Events Coordinator",
+      "year": "Third Year, ECE",
+      "image": "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=400&auto=format&fit=crop",
       "domain": "Management"
     },
     {
-      "name": "Mohd Afzal",
+      "name": "Vikram Singh",
       "role": "Design Lead",
-      "year": "Second Year, ECE",
-      "image": "coordinator2.jpeg",
+      "year": "Second Year, ME",
+      "image": "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=400&auto=format&fit=crop",
       "domain": "CAD & Design"
     },
     {
-      "name": "Priyanka",
-      "role": "Videography Lead",
-      "year": "First Year, ECE",
-      "image": "videography.jpeg",
-      "domain": "Media"
+      "name": "Riya Sharma",
+      "role": "PR & Marketing",
+      "year": "Third Year, CSE",
+      "image": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&auto=format&fit=crop",
+      "domain": "Communications"
     },
     {
-      "name": "Smita Kumari",
-      "role": "Content Lead",
-      "year": "Third Year, ECE",
-      "image": "content_lead.jpeg",
-      "domain": "Media"
+      "name": "Karan Malhotra",
+      "role": "Web Developer",
+      "year": "Second Year, IT",
+      "image": "https://images.unsplash.com/photo-1502767089025-6572583495f9?w=400&auto=format&fit=crop",
+      "domain": "Web Development"
+    },
+    {
+      "name": "Divya Reddy",
+      "role": "Hardware Lead",
+      "year": "Third Year, EE",
+      "image": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&auto=format&fit=crop",
+      "domain": "Electronics"
+    },
+    {
+      "name": "Divya Reddy",
+      "role": "Hardware Lead",
+      "year": "Third Year, EE",
+      "image": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&auto=format&fit=crop",
+      "domain": "Electronics"
     }
+  ],
+  "members": [
+    { "name": "Aditya Raj", "year": "Second Year, CSE", "domain": "Software" },
+    { "name": "Neha Jain", "year": "Second Year, ECE", "domain": "Hardware" },
+    { "name": "Sarthak Gupta", "year": "Second Year, ME", "domain": "Mechanical" },
+    { "name": "Pooja Iyer", "year": "First Year, CSE", "domain": "AI/ML" },
+    { "name": "Rohan Das", "year": "Second Year, EE", "domain": "Control Systems" },
+    { "name": "Ishita Kapoor", "year": "First Year, IT", "domain": "Web Dev" },
+    { "name": "Varun Nair", "year": "Second Year, CSE", "domain": "Computer Vision" },
+    { "name": "Megha Pandey", "year": "First Year, ECE", "domain": "IoT" }
   ]
 }
