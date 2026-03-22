@@ -1,12 +1,13 @@
-import { useState } from 'react';
-import { motion } from 'framer-motion';
+import { useEffect, useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Calendar, MapPin, Clock, Users, ArrowRight, CheckCircle2 } from 'lucide-react';
+import { Calendar, MapPin, Clock, Users, ArrowRight, CheckCircle2, X, ZoomIn } from 'lucide-react';
 import { getEvents, getEventCategories, getFeaturedEvents } from '@/data';
 
 export function EventsPage() {
   const [selectedCategory, setSelectedCategory] = useState('All');
+  const [selectedEventId, setSelectedEventId] = useState<number | null>(null);
 
   const events = getEvents();
   const categories = getEventCategories();
@@ -15,6 +16,53 @@ export function EventsPage() {
   const filteredEvents = selectedCategory === 'All'
     ? events
     : events.filter((event) => event.category === selectedCategory);
+
+  const modalEvents = selectedCategory === 'All' ? events : filteredEvents;
+  const selectedEvent = events.find((event) => event.id === selectedEventId) ?? null;
+  const selectedEventDetails =
+    selectedEvent?.detailedDescription?.trim() || selectedEvent?.description || '';
+  const selectedEventDetailBlocks = selectedEventDetails
+    .split('\n\n')
+    .map((block) => block.trim())
+    .filter(Boolean);
+
+  const handlePrevEvent = () => {
+    if (selectedEventId === null || modalEvents.length === 0) return;
+    const activeList = modalEvents.some((event) => event.id === selectedEventId) ? modalEvents : events;
+    const currentIndex = activeList.findIndex((event) => event.id === selectedEventId);
+    if (currentIndex === -1) return;
+    const prevIndex = currentIndex > 0 ? currentIndex - 1 : activeList.length - 1;
+    setSelectedEventId(activeList[prevIndex].id);
+  };
+
+  const handleNextEvent = () => {
+    if (selectedEventId === null || modalEvents.length === 0) return;
+    const activeList = modalEvents.some((event) => event.id === selectedEventId) ? modalEvents : events;
+    const currentIndex = activeList.findIndex((event) => event.id === selectedEventId);
+    if (currentIndex === -1) return;
+    const nextIndex = currentIndex < activeList.length - 1 ? currentIndex + 1 : 0;
+    setSelectedEventId(activeList[nextIndex].id);
+  };
+
+  useEffect(() => {
+    if (selectedEventId === null) return;
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'ArrowLeft') {
+        event.preventDefault();
+        handlePrevEvent();
+      } else if (event.key === 'ArrowRight') {
+        event.preventDefault();
+        handleNextEvent();
+      } else if (event.key === 'Escape') {
+        event.preventDefault();
+        setSelectedEventId(null);
+      }
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [selectedEventId, modalEvents, events]);
 
   const upcomingEvents = filteredEvents.filter(e => e.status === 'Upcoming');
   const pastEvents = filteredEvents.filter(e => e.status === 'Completed');
@@ -82,14 +130,23 @@ export function EventsPage() {
                   viewport={{ once: true, margin: "-100px" }}
                   transition={{ duration: 0.8, delay: index * 0.2, ease: "easeOut" }}
                 >
-                  <Card className="group h-full border-2 hover:border-primary/30 transition-all duration-500 overflow-hidden hover:shadow-2xl">
-                    <div className="relative h-72 overflow-hidden">
+                    <Card className="group h-full border-2 hover:border-primary/30 transition-all duration-500 overflow-hidden hover:shadow-2xl">
+                      <div
+                        className="relative h-72 overflow-hidden cursor-pointer"
+                        onClick={() => setSelectedEventId(event.id)}
+                      >
                       <img
                         src={event.image}
                         alt={event.title}
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent opacity-60" />
+                        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
+                        <div className="absolute left-4 bottom-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                          <div className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
+                            <ZoomIn className="w-5 h-5 text-white" />
+                          </div>
+                        </div>
                       {event.registrationOpen && (
                         <div className="absolute top-4 right-4">
                           <span className="px-3 py-1.5 rounded-full text-xs font-bold bg-green-500/20 text-green-400 border border-green-500/30 backdrop-blur-sm flex items-center gap-1">
@@ -193,13 +250,22 @@ export function EventsPage() {
                     transition={{ duration: 0.4, delay: index * 0.05 }}
                   >
                     <Card className="group h-full border-2 hover:border-primary/30 transition-all duration-500 overflow-hidden hover:shadow-xl hover:-translate-y-1">
-                      <div className="relative h-48 overflow-hidden">
+                      <div
+                        className="relative h-48 overflow-hidden cursor-pointer"
+                        onClick={() => setSelectedEventId(event.id)}
+                      >
                         <img
                           src={event.image}
                           alt={event.title}
                           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent opacity-60" />
+                        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
+                        <div className="absolute left-3 bottom-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                          <div className="w-9 h-9 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
+                            <ZoomIn className="w-4.5 h-4.5 text-white" />
+                          </div>
+                        </div>
                         {event.registrationOpen && (
                           <div className="absolute top-3 right-3">
                             <span className="px-2 py-1 rounded-full text-xs font-bold bg-green-500/20 text-green-400 border border-green-500/30 backdrop-blur-sm">
@@ -266,13 +332,22 @@ export function EventsPage() {
                     transition={{ duration: 0.4, delay: index * 0.05 }}
                   >
                     <Card className="group h-full border-2 hover:border-border transition-all duration-500 overflow-hidden opacity-75">
-                      <div className="relative h-48 overflow-hidden">
+                      <div
+                        className="relative h-48 overflow-hidden cursor-pointer"
+                        onClick={() => setSelectedEventId(event.id)}
+                      >
                         <img
                           src={event.image}
                           alt={event.title}
                           className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent opacity-80" />
+                        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300" />
+                        <div className="absolute left-3 bottom-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                          <div className="w-9 h-9 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
+                            <ZoomIn className="w-4.5 h-4.5 text-white" />
+                          </div>
+                        </div>
                         <div className="absolute top-3 right-3">
                           <span className="px-2 py-1 rounded-full text-xs font-bold bg-muted text-muted-foreground">
                             Completed
@@ -301,6 +376,121 @@ export function EventsPage() {
           )}
         </div>
       </section>
+
+      {/* Event Detail Lightbox */}
+      <AnimatePresence>
+        {selectedEvent && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.25 }}
+            className="fixed inset-0 z-[100] bg-black/90 backdrop-blur-md p-3 sm:p-6"
+            onClick={() => setSelectedEventId(null)}
+          >
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={() => setSelectedEventId(null)}
+              className="absolute top-4 right-4 sm:top-6 sm:right-6 z-20 w-11 h-11 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-sm flex items-center justify-center"
+            >
+              <X className="w-5 h-5 text-white" />
+            </motion.button>
+
+            <motion.div
+              key={selectedEvent.id}
+              initial={{ y: 12, opacity: 0, scale: 0.98 }}
+              animate={{ y: 0, opacity: 1, scale: 1 }}
+              exit={{ y: 12, opacity: 0, scale: 0.98 }}
+              transition={{ duration: 0.25 }}
+              className="mx-auto h-full max-w-6xl"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="h-full rounded-2xl overflow-hidden border border-white/15 bg-zinc-950/90 grid grid-cols-1 lg:grid-cols-2">
+                <div className="relative min-h-[260px] lg:min-h-0 bg-zinc-900">
+                  <img
+                    src={selectedEvent.image}
+                    alt={selectedEvent.title}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute top-4 left-4 flex items-center gap-2">
+                    <span className={`px-3 py-1 rounded-full text-xs font-bold backdrop-blur-md shadow-lg ring-1 ring-white/20 ${
+                      selectedEvent.status === 'Completed'
+                        ? 'bg-emerald-900/75 text-emerald-100 border border-emerald-300/35'
+                        : 'bg-amber-900/75 text-amber-100 border border-amber-300/35'
+                    }`}>
+                      {selectedEvent.status}
+                    </span>
+                    {selectedEvent.registrationOpen && (
+                      <span className="px-3 py-1 rounded-full text-xs font-bold backdrop-blur-md shadow-lg ring-1 ring-white/20 bg-green-900/75 text-green-100 border border-green-300/35">
+                        Registration Open
+                      </span>
+                    )}
+                  </div>
+                </div>
+
+                <div className="p-6 sm:p-8 lg:p-10 overflow-y-auto">
+                  <span className="text-xs uppercase tracking-wider text-primary font-semibold">{selectedEvent.category}</span>
+                  <h3 className="text-2xl sm:text-3xl font-heading font-bold text-white mt-2 mb-4">
+                    {selectedEvent.title}
+                  </h3>
+
+                  <div className="space-y-3 mb-6">
+                    {selectedEventDetailBlocks.map((block, index) => (
+                      <p
+                        key={`${selectedEvent.id}-detail-${index}`}
+                        className="text-sm sm:text-base text-zinc-300 leading-relaxed whitespace-pre-line"
+                      >
+                        {block}
+                      </p>
+                    ))}
+                  </div>
+
+                  <div className="space-y-3 mb-7 text-sm">
+                    <div className="flex items-center gap-3 text-zinc-200">
+                      <Calendar className="w-4 h-4 text-primary" />
+                      <span>{selectedEvent.date}</span>
+                    </div>
+                    <div className="flex items-center gap-3 text-zinc-200">
+                      <Clock className="w-4 h-4 text-primary" />
+                      <span>{selectedEvent.time}</span>
+                    </div>
+                    <div className="flex items-center gap-3 text-zinc-200">
+                      <MapPin className="w-4 h-4 text-primary" />
+                      <span>{selectedEvent.location}</span>
+                    </div>
+                    <div className="flex items-center gap-3 text-zinc-200">
+                      <Users className="w-4 h-4 text-primary" />
+                      <span>{selectedEvent.capacity} participants</span>
+                    </div>
+                  </div>
+
+                  <div className="flex flex-col sm:flex-row gap-3">
+                    {selectedEvent.registrationOpen ? (
+                      selectedEvent.registrationLink ? (
+                        <Button asChild className="rounded-xl">
+                          <a href={selectedEvent.registrationLink} target="_blank" rel="noopener noreferrer">
+                            Register Now
+                            <ArrowRight className="w-4 h-4 ml-2" />
+                          </a>
+                        </Button>
+                      ) : (
+                        <Button disabled className="rounded-xl">
+                          Registration Open
+                        </Button>
+                      )
+                    ) : (
+                      <Button disabled className="rounded-xl">
+                        Registration Closed
+                      </Button>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
