@@ -4,7 +4,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { Mail, MapPin, Phone, Send, Facebook, Twitter, Instagram, Linkedin, Github, MessageCircle } from 'lucide-react';
+import { Mail, MapPin, Phone, Send, Twitter, Instagram, Linkedin, Github, MessageCircle } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 
 export function ContactPage() {
@@ -41,14 +41,14 @@ export function ContactPage() {
     {
       icon: MapPin,
       title: 'Visit Us',
-      content: ['National Institute of Technology Patna', 'Ashok Rajpath, Patna', 'Bihar 800005, India'],
+      content: ['National Institute of Technology Patna', 'Bihta, Patna - 801103, Bihar, IN'],
       color: 'text-blue-500 dark:text-blue-400',
       bg: 'bg-blue-500/10 dark:bg-blue-500/15',
     },
     {
       icon: Mail,
       title: 'Email Us',
-      content: ['robotics@nitp.ac.in', 'info@nitproboticsclub.in'],
+      content: ['roboticsclub@nitp.ac.in', 'ankita.ug23.ec@nitp.ac.in'],
       color: 'text-violet-500 dark:text-violet-400',
       bg: 'bg-violet-500/10 dark:bg-violet-500/15',
       links: true
@@ -56,7 +56,7 @@ export function ContactPage() {
     {
       icon: Phone,
       title: 'Call Us',
-      content: ['+91 612 237 1715', '+91 612 237 2715'],
+      content: ['Aarav: +91 82528 62360', 'Ankit Anand: +91 79038 28567'],
       color: 'text-amber-500 dark:text-amber-400',
       bg: 'bg-amber-500/10 dark:bg-amber-500/15',
       links: true
@@ -65,16 +65,9 @@ export function ContactPage() {
 
   const socialLinks = [
     { 
-      icon: Facebook, 
-      label: 'Facebook', 
-      href: '#', 
-      color: 'text-blue-500 dark:text-blue-400',
-      bg: 'bg-blue-500/10 dark:bg-blue-500/15'
-    },
-    { 
       icon: Instagram, 
       label: 'Instagram', 
-      href: '#', 
+      href: 'https://www.instagram.com/robotics_club_nitp', 
       color: 'text-pink-500 dark:text-pink-400',
       bg: 'bg-pink-500/10 dark:bg-pink-500/15'
     },
@@ -88,14 +81,14 @@ export function ContactPage() {
     { 
       icon: Linkedin, 
       label: 'LinkedIn', 
-      href: '#', 
+      href: 'https://www.linkedin.com/company/robotics-club-nit-patna', 
       color: 'text-blue-600 dark:text-blue-500',
       bg: 'bg-blue-600/10 dark:bg-blue-600/15'
     },
     { 
       icon: Github, 
       label: 'GitHub', 
-      href: '#', 
+      href: 'https://github.com/Robotics-Club-NIT-Patna', 
       color: 'text-gray-700 dark:text-gray-400',
       bg: 'bg-gray-500/10 dark:bg-gray-500/15'
     },
@@ -211,7 +204,7 @@ export function ContactPage() {
                           onChange={handleChange}
                           required
                           className="h-12 rounded-xl"
-                          placeholder="John Doe"
+                          placeholder="Your Name"
                         />
                       </div>
                       <div className="space-y-2">
@@ -226,7 +219,7 @@ export function ContactPage() {
                           onChange={handleChange}
                           required
                           className="h-12 rounded-xl"
-                          placeholder="john@example.com"
+                          placeholder="email@example.com"
                         />
                       </div>
                     </div>
@@ -365,7 +358,7 @@ export function ContactPage() {
             className="relative h-[500px] rounded-3xl overflow-hidden border-2 border-border premium-shadow"
           >
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3597.654788937634!2d85.17036257531996!3d25.620421977442454!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ed58dce6731e59%3A0x4059f39a1ac82e06!2sNational%20Institute%20of%20Technology%2C%20Patna!5e0!3m2!1sen!2sin!4v1707825600000!5m2!1sen!2sin"
+              src="https://www.google.com/maps?q=25.576724356292182,84.83201828650684&z=15&output=embed"
               width="100%"
               height="100%"
               style={{ border: 0 }}

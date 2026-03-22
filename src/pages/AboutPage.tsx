@@ -93,9 +93,9 @@ export function AboutPage() {
               className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto"
             >
               {[
-                { label: 'Members', value: '200+' },
-                { label: 'Projects', value: '50+' },
-                { label: 'Awards', value: '25+' },
+                { label: 'Members', value: '50+' },
+                { label: 'Projects', value: '40+' },
+                { label: 'Awards', value: '15+' },
                 { label: 'Years', value: '10+' },
               ].map((stat, index) => (
                 <motion.div
@@ -317,12 +317,12 @@ export function AboutPage() {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="text-center max-w-3xl mx-auto mb-20"
           >
-            <span className="text-sm font-semibold text-primary uppercase tracking-wider">Journey</span>
+            <span className="text-sm font-semibold text-primary uppercase tracking-wider">Timeline</span>
             <h2 className="text-4xl sm:text-5xl font-heading font-bold mt-4 mb-6">
-              Our Milestones
+              Our Growth Timeline
             </h2>
             <p className="text-lg text-muted-foreground">
-              A decade of achievements, growth, and technological excellence
+              Key phases in our journey of innovation and technical growth
             </p>
           </motion.div>
 

@@ -5,8 +5,7 @@ import {
   Twitter,
   Instagram,
   Mail,
-  MapPin,
-  Phone,
+  MapPin
 } from 'lucide-react';
 
 const footerLinks = {
@@ -24,10 +23,10 @@ const footerLinks = {
 };
 
 const socialLinks = [
-  { icon: Github, href: '#', label: 'GitHub' },
-  { icon: Linkedin, href: '#', label: 'LinkedIn' },
+  { icon: Github, href: 'https://github.com/Robotics-Club-NIT-Patna', label: 'GitHub' },
+  { icon: Linkedin, href: 'https://www.linkedin.com/company/robotics-club-nit-patna', label: 'LinkedIn' },
   { icon: Twitter, href: '#', label: 'Twitter' },
-  { icon: Instagram, href: '#', label: 'Instagram' },
+  { icon: Instagram, href: 'https://www.instagram.com/robotics_club_nitp', label: 'Instagram' },
 ];
 
 export function Footer() {
@@ -115,12 +114,12 @@ export function Footer() {
                   robotics@nitp.ac.in
                 </a>
               </li>
-              <li className="flex items-center space-x-2.5 text-sm text-muted-foreground">
+              {/* <li className="flex items-center space-x-2.5 text-sm text-muted-foreground">
                 <Phone size={16} className="flex-shrink-0" />
                 <a href="tel:+911234567890" className="hover:text-foreground transition-colors">
                   +91 123 456 7890
                 </a>
-              </li>
+              </li> */}
             </ul>
           </div>
         </div>

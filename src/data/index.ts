@@ -44,13 +44,23 @@ import galleryData from './gallery.json';
 import aboutData from './about.json';
 import notificationsData from './notifications.json';
 
+function parseEventDate(date: string): number {
+  const direct = Date.parse(date);
+  if (!Number.isNaN(direct)) return direct;
+
+  // Handle ranges like "15-17 March 2026" by taking the first date token.
+  const firstPart = date.split('-')[0]?.trim() ?? date;
+  const fallback = Date.parse(firstPart);
+  return Number.isNaN(fallback) ? 0 : fallback;
+}
+
 // ============================================
 // PROJECTS
 // ============================================
 
 /** All projects */
 export function getProjects(): Project[] {
-  return projectsData as Project[];
+  return [...(projectsData as Project[])].sort((a, b) => b.id - a.id);
 }
 
 /** Unique project categories (for filter buttons) */
@@ -61,7 +71,7 @@ export function getProjectCategories(): string[] {
 
 /** Projects where featured === true (shown on Home page) */
 export function getFeaturedProjects(): Project[] {
-  return (projectsData as Project[]).filter((p) => p.featured);
+  return getProjects().filter((p) => p.featured);
 }
 
 // ============================================
@@ -70,7 +80,9 @@ export function getFeaturedProjects(): Project[] {
 
 /** All events */
 export function getEvents(): Event[] {
-  return eventsData as Event[];
+  return [...(eventsData as Event[])].sort(
+    (a, b) => parseEventDate(b.date) - parseEventDate(a.date),
+  );
 }
 
 /** Unique event categories */
@@ -81,12 +93,12 @@ export function getEventCategories(): string[] {
 
 /** Featured events (shown in featured section on Events page) */
 export function getFeaturedEvents(): Event[] {
-  return (eventsData as Event[]).filter((e) => e.featured);
+  return getEvents().filter((e) => e.featured);
 }
 
 /** Upcoming events */
 export function getUpcomingEvents(): Event[] {
-  return (eventsData as Event[]).filter((e) => e.status === 'Upcoming');
+  return getEvents().filter((e) => e.status === 'Upcoming');
 }
 
 /** Latest N upcoming events (shown on Home page) */
@@ -96,7 +108,7 @@ export function getLatestUpcomingEvents(count: number = 3): Event[] {
 
 /** Past / completed events */
 export function getPastEvents(): Event[] {
-  return (eventsData as Event[]).filter((e) => e.status === 'Completed');
+  return getEvents().filter((e) => e.status === 'Completed');
 }
 
 // ============================================

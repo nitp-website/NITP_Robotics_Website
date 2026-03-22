@@ -170,14 +170,16 @@ export function TeamPage() {
                       >
                         <Linkedin size={20} />
                       </motion.a>
-                      <motion.a 
-                        whileHover={{ scale: 1.15, rotate: -5 }}
-                        whileTap={{ scale: 0.95 }}
-                        href={teamData.pi.social.twitter} 
-                        className="p-3 rounded-xl bg-accent hover:bg-primary hover:text-primary-foreground transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-primary/20"
-                      >
-                        <Twitter size={20} />
-                      </motion.a>
+                      {teamData.pi.social.twitter && (
+                        <motion.a 
+                          whileHover={{ scale: 1.15, rotate: -5 }}
+                          whileTap={{ scale: 0.95 }}
+                          href={teamData.pi.social.twitter} 
+                          className="p-3 rounded-xl bg-accent hover:bg-primary hover:text-primary-foreground transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-primary/20"
+                        >
+                          <Twitter size={20} />
+                        </motion.a>
+                      )}
                     </motion.div>
                   </motion.div>
                 </div>

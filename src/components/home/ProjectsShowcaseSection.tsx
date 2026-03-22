@@ -5,6 +5,27 @@ import { Link } from 'react-router-dom';
 import { getFeaturedProjects } from '@/data';
 
 export function ProjectsShowcaseSection() {
+  const getExternalUrl = (url?: string) => {
+    if (!url) return null;
+
+    const trimmedUrl = url.trim();
+    if (!trimmedUrl || trimmedUrl === '#') return null;
+
+    const withProtocol = /^https?:\/\//i.test(trimmedUrl)
+      ? trimmedUrl
+      : `https://${trimmedUrl}`;
+
+    try {
+      const parsedUrl = new URL(withProtocol);
+      if (parsedUrl.protocol === 'http:' || parsedUrl.protocol === 'https:') {
+        return parsedUrl.toString();
+      }
+      return null;
+    } catch {
+      return null;
+    }
+  };
+
   const projects = getFeaturedProjects().map((p) => ({
     title: p.title,
     category: p.category,
@@ -54,59 +75,72 @@ export function ProjectsShowcaseSection() {
 
         {/* Project Cards */}
         <div className="space-y-8">
-          {projects.map((project, i) => (
-            <motion.article
-              key={project.title}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-100px' }}
-              transition={{ duration: 0.6, delay: i * 0.1 }}
-              className="group"
-            >
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 rounded-2xl overflow-hidden bg-card border border-border/60 hover:border-border transition-all duration-500 hover:premium-shadow-lg">
-                {/* Image */}
-                <div className={`relative overflow-hidden h-64 lg:h-auto ${i % 2 === 1 ? 'lg:order-2' : ''}`}>
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
-                </div>
+          {projects.map((project, i) => {
+            const githubUrl = getExternalUrl(project.github);
+            const demoUrl = getExternalUrl(project.demo);
 
-                {/* Content */}
-                <div className="p-8 lg:p-12 flex flex-col justify-center">
-                  <span className="text-sm font-medium text-primary mb-3">{project.category}</span>
-                  <h3 className="font-heading text-2xl sm:text-3xl font-bold mb-4 group-hover:text-primary transition-colors duration-300">
-                    {project.title}
-                  </h3>
-                  <p className="text-muted-foreground leading-relaxed mb-6">
-                    {project.description}
-                  </p>
-                  <div className="flex flex-wrap gap-2 mb-8">
-                    {project.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="px-3 py-1 text-xs font-medium rounded-full bg-secondary text-secondary-foreground"
-                      >
-                        {tag}
-                      </span>
-                    ))}
+            return (
+              <motion.article
+                key={project.title}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-100px' }}
+                transition={{ duration: 0.6, delay: i * 0.1 }}
+                className="group"
+              >
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 rounded-2xl overflow-hidden bg-card border border-border/60 hover:border-border transition-all duration-500 hover:premium-shadow-lg">
+                  {/* Image */}
+                  <div className={`relative overflow-hidden h-64 lg:h-auto ${i % 2 === 1 ? 'lg:order-2' : ''}`}>
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
                   </div>
-                  <div className="flex items-center gap-3">
-                    <Button variant="outline" size="sm" className="rounded-lg group/btn">
-                      <Github className="w-4 h-4 mr-2" />
-                      Source
-                    </Button>
-                    <Button size="sm" className="rounded-lg group/btn">
-                      View project
-                      <ArrowUpRight className="ml-2 w-3.5 h-3.5 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
-                    </Button>
+
+                  {/* Content */}
+                  <div className="p-8 lg:p-12 flex flex-col justify-center">
+                    <span className="text-sm font-medium text-primary mb-3">{project.category}</span>
+                    <h3 className="font-heading text-2xl sm:text-3xl font-bold mb-4 group-hover:text-primary transition-colors duration-300">
+                      {project.title}
+                    </h3>
+                    <p className="text-muted-foreground leading-relaxed mb-6">
+                      {project.description}
+                    </p>
+                    <div className="flex flex-wrap gap-2 mb-8">
+                      {project.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="px-3 py-1 text-xs font-medium rounded-full bg-secondary text-secondary-foreground"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                    <div className="flex items-center gap-3">
+                      {githubUrl && (
+                        <Button asChild variant="outline" size="sm" className="rounded-lg group/btn">
+                          <a href={githubUrl} target="_blank" rel="noopener noreferrer">
+                            <Github className="w-4 h-4 mr-2" />
+                            Source
+                          </a>
+                        </Button>
+                      )}
+                      {demoUrl && (
+                        <Button asChild size="sm" className="rounded-lg group/btn">
+                          <a href={demoUrl} target="_blank" rel="noopener noreferrer">
+                            View project
+                            <ArrowUpRight className="ml-2 w-3.5 h-3.5 group-hover/btn:translate-x-0.5 group-hover/btn:-translate-y-0.5 transition-transform" />
+                          </a>
+                        </Button>
+                      )}
+                    </div>
                   </div>
                 </div>
-              </div>
-            </motion.article>
-          ))}
+              </motion.article>
+            );
+          })}
         </div>
       </div>
     </section>

@@ -9,6 +9,27 @@ import { getProjects, getProjectCategories, getFeaturedProjects } from '@/data';
 export function ProjectsPage() {
   const [selectedCategory, setSelectedCategory] = useState('All');
 
+  const getExternalUrl = (url?: string) => {
+    if (!url) return null;
+
+    const trimmedUrl = url.trim();
+    if (!trimmedUrl || trimmedUrl === '#') return null;
+
+    const withProtocol = /^https?:\/\//i.test(trimmedUrl)
+      ? trimmedUrl
+      : `https://${trimmedUrl}`;
+
+    try {
+      const parsedUrl = new URL(withProtocol);
+      if (parsedUrl.protocol === 'http:' || parsedUrl.protocol === 'https:') {
+        return parsedUrl.toString();
+      }
+      return null;
+    } catch {
+      return null;
+    }
+  };
+
   const projects = getProjects();
   const categories = getProjectCategories();
   const featuredProjects = getFeaturedProjects();
@@ -72,70 +93,79 @@ export function ProjectsPage() {
             </motion.div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-              {featuredProjects.map((project, index) => (
-                <motion.div
-                  key={project.id}
-                  initial={{ opacity: 0, y: 40 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-100px" }}
-                  transition={{ duration: 0.8, delay: index * 0.2, ease: "easeOut" }}
-                >
-                  <Card className="group h-full border-2 hover:border-primary/30 transition-all duration-500 overflow-hidden hover:shadow-2xl">
-                    <div className="relative h-72 overflow-hidden">
-                      <img
-                        src={project.image}
-                        alt={project.title}
-                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent opacity-60" />
-                      <div className="absolute top-4 right-4 flex gap-2">
-                        <span className={`px-3 py-1 rounded-full text-xs font-bold ${
-                          project.status === 'Completed' 
-                            ? 'bg-green-500/20 text-green-400 border border-green-500/30' 
-                            : 'bg-amber-500/20 text-amber-400 border border-amber-500/30'
-                        }`}>
-                          {project.status}
-                        </span>
-                      </div>
-                    </div>
-                    <CardContent className="p-8">
-                      <div className="mb-3">
-                        <span className="text-sm font-medium text-primary">{project.category}</span>
-                      </div>
-                      <h3 className="text-2xl font-heading font-bold mb-3 group-hover:text-primary transition-colors">
-                        {project.title}
-                      </h3>
-                      <p className="text-muted-foreground mb-6 leading-relaxed">
-                        {project.description}
-                      </p>
-                      <div className="flex flex-wrap gap-2 mb-6">
-                        {project.tags.map((tag) => (
-                          <span
-                            key={tag}
-                            className="px-3 py-1 text-xs font-medium rounded-full bg-muted text-muted-foreground"
-                          >
-                            {tag}
+              {featuredProjects.map((project, index) => {
+                const githubUrl = getExternalUrl(project.github);
+                const demoUrl = getExternalUrl(project.demo);
+
+                return (
+                  <motion.div
+                    key={project.id}
+                    initial={{ opacity: 0, y: 40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: "-100px" }}
+                    transition={{ duration: 0.8, delay: index * 0.2, ease: "easeOut" }}
+                  >
+                    <Card className="group h-full border-2 hover:border-primary/30 transition-all duration-500 overflow-hidden hover:shadow-2xl">
+                      <div className="relative h-72 overflow-hidden">
+                        <img
+                          src={project.image}
+                          alt={project.title}
+                          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent opacity-60" />
+                        <div className="absolute top-4 right-4 flex gap-2">
+                          <span className={`px-3 py-1 rounded-full text-xs font-bold ${
+                            project.status === 'Completed' 
+                              ? 'bg-green-500/20 text-green-400 border border-green-500/30' 
+                              : 'bg-amber-500/20 text-amber-400 border border-amber-500/30'
+                          }`}>
+                            {project.status}
                           </span>
-                        ))}
+                        </div>
                       </div>
-                      <div className="flex gap-3">
-                        {project.github && (
-                          <Button variant="outline" size="sm" className="flex-1 rounded-xl group/btn">
-                            <Github className="w-4 h-4 mr-2" />
-                            Code
-                          </Button>
-                        )}
-                        {project.demo && (
-                          <Button size="sm" className="flex-1 rounded-xl group/btn">
-                            View Demo
-                            <ExternalLink className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform" />
-                          </Button>
-                        )}
-                      </div>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-              ))}
+                      <CardContent className="p-8">
+                        <div className="mb-3">
+                          <span className="text-sm font-medium text-primary">{project.category}</span>
+                        </div>
+                        <h3 className="text-2xl font-heading font-bold mb-3 group-hover:text-primary transition-colors">
+                          {project.title}
+                        </h3>
+                        <p className="text-muted-foreground mb-6 leading-relaxed">
+                          {project.description}
+                        </p>
+                        <div className="flex flex-wrap gap-2 mb-6">
+                          {project.tags.map((tag) => (
+                            <span
+                              key={tag}
+                              className="px-3 py-1 text-xs font-medium rounded-full bg-muted text-muted-foreground"
+                            >
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
+                        <div className="flex gap-3">
+                          {githubUrl && (
+                            <Button asChild variant="outline" size="sm" className="flex-1 rounded-xl group/btn">
+                              <a href={githubUrl} target="_blank" rel="noopener noreferrer">
+                                <Github className="w-4 h-4 mr-2" />
+                                Code
+                              </a>
+                            </Button>
+                          )}
+                          {demoUrl && (
+                            <Button asChild size="sm" className="flex-1 rounded-xl group/btn">
+                              <a href={demoUrl} target="_blank" rel="noopener noreferrer">
+                                View Demo
+                                <ExternalLink className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 transition-transform" />
+                              </a>
+                            </Button>
+                          )}
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </motion.div>
+                );
+              })}
             </div>
           </div>
         </section>
@@ -178,68 +208,77 @@ export function ProjectsPage() {
               transition={{ duration: 0.4 }}
               className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
             >
-              {filteredProjects.map((project, index) => (
-                <motion.div
-                  key={project.id}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.4, delay: index * 0.05 }}
-                >
-                  <Card className="group h-full border-2 hover:border-primary/30 transition-all duration-500 overflow-hidden hover:shadow-xl hover:-translate-y-1">
-                    <div className="relative h-52 overflow-hidden">
-                      <img
-                        src={project.image}
-                        alt={project.title}
-                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent opacity-60" />
-                      <div className="absolute top-3 right-3">
-                        <span className={`px-2.5 py-1 rounded-full text-xs font-bold ${
-                          project.status === 'Completed' 
-                            ? 'bg-green-500/20 text-green-400 border border-green-500/30' 
-                            : 'bg-amber-500/20 text-amber-400 border border-amber-500/30'
-                        }`}>
-                          {project.status}
-                        </span>
-                      </div>
-                    </div>
-                    <CardContent className="p-6">
-                      <div className="mb-2">
-                        <span className="text-xs font-medium text-primary">{project.category}</span>
-                      </div>
-                      <h3 className="text-xl font-heading font-bold mb-2 group-hover:text-primary transition-colors">
-                        {project.title}
-                      </h3>
-                      <p className="text-sm text-muted-foreground mb-4 line-clamp-2">
-                        {project.description}
-                      </p>
-                      <div className="flex flex-wrap gap-2 mb-4">
-                        {project.tags.slice(0, 3).map((tag) => (
-                          <span
-                            key={tag}
-                            className="px-2 py-0.5 text-xs font-medium rounded-full bg-muted text-muted-foreground"
-                          >
-                            {tag}
+              {filteredProjects.map((project, index) => {
+                const githubUrl = getExternalUrl(project.github);
+                const demoUrl = getExternalUrl(project.demo);
+
+                return (
+                  <motion.div
+                    key={project.id}
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.4, delay: index * 0.05 }}
+                  >
+                    <Card className="group h-full border-2 hover:border-primary/30 transition-all duration-500 overflow-hidden hover:shadow-xl hover:-translate-y-1">
+                      <div className="relative h-52 overflow-hidden">
+                        <img
+                          src={project.image}
+                          alt={project.title}
+                          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent opacity-60" />
+                        <div className="absolute top-3 right-3">
+                          <span className={`px-2.5 py-1 rounded-full text-xs font-bold ${
+                            project.status === 'Completed' 
+                              ? 'bg-green-500/20 text-green-400 border border-green-500/30' 
+                              : 'bg-amber-500/20 text-amber-400 border border-amber-500/30'
+                          }`}>
+                            {project.status}
                           </span>
-                        ))}
+                        </div>
                       </div>
-                      <div className="flex gap-2">
-                        {project.github && (
-                          <Button variant="outline" size="sm" className="flex-1 rounded-lg">
-                            <Github className="w-3.5 h-3.5" />
-                          </Button>
-                        )}
-                        {project.demo && (
-                          <Button size="sm" className="flex-1 rounded-lg group/btn">
-                            Demo
-                            <ExternalLink className="w-3.5 h-3.5 ml-1 group-hover/btn:translate-x-0.5 transition-transform" />
-                          </Button>
-                        )}
-                      </div>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-              ))}
+                      <CardContent className="p-6">
+                        <div className="mb-2">
+                          <span className="text-xs font-medium text-primary">{project.category}</span>
+                        </div>
+                        <h3 className="text-xl font-heading font-bold mb-2 group-hover:text-primary transition-colors">
+                          {project.title}
+                        </h3>
+                        <p className="text-sm text-muted-foreground mb-4 line-clamp-2">
+                          {project.description}
+                        </p>
+                        <div className="flex flex-wrap gap-2 mb-4">
+                          {project.tags.slice(0, 3).map((tag) => (
+                            <span
+                              key={tag}
+                              className="px-2 py-0.5 text-xs font-medium rounded-full bg-muted text-muted-foreground"
+                            >
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
+                        <div className="flex gap-2">
+                          {githubUrl && (
+                            <Button asChild variant="outline" size="sm" className="flex-1 rounded-lg">
+                              <a href={githubUrl} target="_blank" rel="noopener noreferrer" aria-label={`${project.title} GitHub repository`}>
+                                <Github className="w-3.5 h-3.5" />
+                              </a>
+                            </Button>
+                          )}
+                          {demoUrl && (
+                            <Button asChild size="sm" className="flex-1 rounded-lg group/btn">
+                              <a href={demoUrl} target="_blank" rel="noopener noreferrer">
+                                Demo
+                                <ExternalLink className="w-3.5 h-3.5 ml-1 group-hover/btn:translate-x-0.5 transition-transform" />
+                              </a>
+                            </Button>
+                          )}
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </motion.div>
+                );
+              })}
             </motion.div>
           </AnimatePresence>
         </div>

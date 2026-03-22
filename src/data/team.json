@@ -1,63 +1,86 @@
 {
   "pi": {
-    "name": "Dr. Rajesh Kumar",
+    "name": "Dr. Anupam Kumar",
     "role": "Professor In-charge",
-    "department": "Department of Electrical Engineering",
-    "image": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&auto=format&fit=crop",
-    "bio": "Leading research in robotics and automation with 15+ years of experience",
-    "email": "rajesh.kumar@nitp.ac.in",
+    "department": "Dept of Electronics and Communication Engineering",
+    "image": "https://res.cloudinary.com/dij1hpcld/image/upload/v1774150737/Screenshot_2026-03-22_at_9.08.46_AM_hhcalj.png",
+    "bio": "Leading research in robotics and automation with experience",
+    "email": "Anupam.ec@nitp.ac.in",
     "social": {
-      "linkedin": "#",
-      "twitter": "#"
+      "linkedin": "https://www.linkedin.com/in/dr-anupam-kumar-67435037"
     }
   },
   "executives": [
     {
-      "name": "Arjun Sharma",
+      "name": "Pranav",
       "role": "President",
-      "year": "Final Year, CSE",
-      "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&auto=format&fit=crop",
+      "year": "Pre-Final Year, CSE",
+      "image": "https://res.cloudinary.com/dij1hpcld/image/upload/v1774151486/Selfie_vb6ari.jpg",
       "bio": "Leading the club with a vision for innovation",
-      "email": "arjun@student.nitp.ac.in",
+      "email": "pranavk@nitp.ac.in",
       "social": {
-        "github": "#",
-        "linkedin": "#",
-        "twitter": "#"
+        "github": "https://github.com/lifeispranav",
+        "linkedin": "https://www.linkedin.com/in/lifeispranav",
+        "twitter": ""
       }
     },
     {
-      "name": "Priya Singh",
+      "name": "Ankit Anand",
       "role": "Vice President",
-      "year": "Final Year, ECE",
-      "image": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&auto=format&fit=crop",
+      "year": "Third Year, ECE",
+      "image": "https://res.cloudinary.com/dvravcbwk/image/upload/v1774153819/WhatsApp_Image_2026-03-17_at_2.56.50_PM_ff0y2h.jpg",
       "bio": "Passionate about AI and embedded systems",
-      "email": "priya@student.nitp.ac.in",
+      "email": "ankita.ug23.ec@nitp.ac.ihttps://www.linkedin.com/in/ankit-anand-60052428a",
       "social": {
-        "github": "#",
-        "linkedin": "#",
-        "twitter": "#"
+        "github": "https://github.com/Ankitanand017",
+        "linkedin": "https://www.linkedin.com/in/ankit-anand-60052428a",
+        "twitter": ""
       }
     },
     {
-      "name": "Rahul Verma",
+      "name": "Adarsh Arav",
       "role": "Secretary",
-      "year": "Third Year, EE",
-      "image": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&auto=format&fit=crop",
+      "year": "Second Year, CSE",
+      "image": "https://res.cloudinary.com/dvravcbwk/image/upload/v1774153996/WhatsApp_Image_2026-03-17_at_2.35.50_PM_2_gto2tq.jpg",
       "bio": "Managing operations and coordinating events",
-      "email": "rahul@student.nitp.ac.in",
+      "email": "adarsha.ug24.cs@nitp.ac.in",
       "social": {
-        "github": "#",
-        "linkedin": "#",
-        "twitter": "#"
+        "github": "https://github.com/adarshaaravvv",
+        "linkedin": "https://www.linkedin.com/in/adarsh-aaravvvvvvvvv/",
+        "twitter": ""
       }
     },
     {
-      "name": "Sneha Patel",
-      "role": "Treasurer",
-      "year": "Third Year, ME",
-      "image": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&auto=format&fit=crop",
+      "name": "Kumar Shourya",
+      "role": "Joint Secretary",
+      "year": "Second Year, C SE",
+      "image": "https://res.cloudinary.com/dvravcbwk/image/upload/v1774153986/WhatsApp_Image_2026-03-17_at_2.35.50_PM_1_i3bfgg.jpg",
       "bio": "Ensuring smooth financial management",
-      "email": "sneha@student.nitp.ac.in",
+      "email": "kumarssh.ug24.cs@nitp.ac.in",
+      "social": {
+        "github": "https://github.com/KumarShourya001",
+        "linkedin": "linkedin.com/in/kumar-shourya"
+      }
+    },
+    {
+      "name": "Aditya Narayan",
+      "role": "Coordinator",
+      "year": "Second Year, ECE",
+      "image": "https://res.cloudinary.com/dvravcbwk/image/upload/v1774153961/WhatsApp_Image_2026-03-17_at_2.35.50_PM_rjglcl.jpg",
+      "bio": "Ensuring smooth financial management",
+      "email": "adityan.dd24.ec@nitp.ac.in",
+      "social": {
+        "github": "https://github.com/aditya-narayan007",
+        "linkedin": "www.linkedin.com/in/narayanaditya178"
+      }
+    },
+    {
+      "name": "Mohd Afzal ",
+      "role": "Coordinator",
+      "year": "Second Year, ECE",
+      "image": "https://res.cloudinary.com/dvravcbwk/image/upload/v1774153992/WhatsApp_Image_2026-03-17_at_2.35.49_PM_d1k6mt.jpg",
+      "bio": "Ensuring smooth financial management",
+      "email": "mohda.ug24.ec@nitp.ac.in",
       "social": {
         "github": "#",
         "linkedin": "#"
@@ -66,63 +89,56 @@
   ],
   "coreTeam": [
     {
-      "name": "Amit Kumar",
+      "name": "Adarsh Arav",
       "role": "Technical Lead",
-      "year": "Third Year, CSE",
-      "image": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&auto=format&fit=crop",
-      "domain": "AI & ML"
+      "year": "Second Year, CSE",
+      "image": "https://res.cloudinary.com/dvravcbwk/image/upload/v1774153996/WhatsApp_Image_2026-03-17_at_2.35.50_PM_2_gto2tq.jpg",
+      "domain": "Tech"
     },
     {
-      "name": "Ananya Gupta",
-      "role": "Events Coordinator",
-      "year": "Third Year, ECE",
-      "image": "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=400&auto=format&fit=crop",
+      "name": "Kumar Shourya",
+      "role": "Project Lead",
+      "year": "Second Year, CsE",
+      "image": "https://res.cloudinary.com/dvravcbwk/image/upload/v1774153986/WhatsApp_Image_2026-03-17_at_2.35.50_PM_1_i3bfgg.jpg",
       "domain": "Management"
     },
     {
-      "name": "Vikram Singh",
+      "name": "Mohd Afzal ",
       "role": "Design Lead",
-      "year": "Second Year, ME",
-      "image": "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=400&auto=format&fit=crop",
+      "year": "Second Year, ECE",
+      "image": "https://res.cloudinary.com/dvravcbwk/image/upload/v1774153992/WhatsApp_Image_2026-03-17_at_2.35.49_PM_d1k6mt.jpg",
       "domain": "CAD & Design"
     },
     {
-      "name": "Riya Sharma",
-      "role": "PR & Marketing",
-      "year": "Third Year, CSE",
-      "image": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&auto=format&fit=crop",
-      "domain": "Communications"
-    },
-    {
-      "name": "Karan Malhotra",
+      "name": "Aditya Narayan",
       "role": "Web Developer",
-      "year": "Second Year, IT",
-      "image": "https://images.unsplash.com/photo-1502767089025-6572583495f9?w=400&auto=format&fit=crop",
+      "year": "Second Year, ECE",
+      "image": "https://res.cloudinary.com/dvravcbwk/image/upload/v1774153961/WhatsApp_Image_2026-03-17_at_2.35.50_PM_rjglcl.jpg",
       "domain": "Web Development"
     },
     {
-      "name": "Divya Reddy",
-      "role": "Hardware Lead",
-      "year": "Third Year, EE",
-      "image": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&auto=format&fit=crop",
-      "domain": "Electronics"
+      "name": "Smita kumari",
+      "role": "Content Lead",
+      "year": "Third Year, ECE",
+      "image": "https://res.cloudinary.com/dvravcbwk/image/upload/v1774153976/WhatsApp_Image_2026-03-17_at_2.35.49_PM_1_gtwzhw.jpg",
+      "domain": "Media"
     },
     {
-      "name": "Divya Reddy",
-      "role": "Hardware Lead",
-      "year": "Third Year, EE",
-      "image": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&auto=format&fit=crop",
-      "domain": "Electronics"
+      "name": "Priyanka",
+      "role": "Videography Lead",
+      "year": "First Year, ECE",
+      "image": "https://res.cloudinary.com/dvravcbwk/image/upload/v1774153970/WhatsApp_Image_2026-03-17_at_2.35.49_PM_2_yevbql.jpg",
+      "domain": "Media"
     }
   ],
   "members": [
-    { "name": "Aditya Raj", "year": "Second Year, CSE", "domain": "Software" },
-    { "name": "Neha Jain", "year": "Second Year, ECE", "domain": "Hardware" },
-    { "name": "Sarthak Gupta", "year": "Second Year, ME", "domain": "Mechanical" },
-    { "name": "Pooja Iyer", "year": "First Year, CSE", "domain": "AI/ML" },
-    { "name": "Rohan Das", "year": "Second Year, EE", "domain": "Control Systems" },
-    { "name": "Ishita Kapoor", "year": "First Year, IT", "domain": "Web Dev" },
-    { "name": "Varun Nair", "year": "Second Year, CSE", "domain": "Computer Vision" },
-    { "name": "Megha Pandey", "year": "First Year, ECE", "domain": "IoT" }
+    { "name": "Aayush Chaudhary", "year": "Second Year, ECE", "domain": "Software" },
+    { "name": "Mahesh Kumawat", "year": "Second Year, ECE", "domain": "Hardware" },
+    { "name": "Biswajit Mondal", "year": "Second Year, CSE", "domain": "Software" },
+    { "name": "Yogesh Dhakad", "year": "Second Year, ECE", "domain": "Design" },
+    { "name": "Shivam Singh", "year": "First Year, CSE", "domain": "Technical" },
+    { "name": "Nitin Singh", "year": "First Year, CSE", "domain": "Web Dev" },
+    { "name": "Prem Kumar", "year": "First Year, CSE", "domain": "Computer Vision" },
+    { "name": "Niharika", "year": "First Year, ECE", "domain": "IoT" }
   ]
 }
