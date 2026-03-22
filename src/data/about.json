@@ -6,12 +6,11 @@
     { "year": "2023", "title": "Excellence in Research - IEEE Conference", "category": "Research", "icon": "BookOpen" }
   ],
   "milestones": [
-    { "year": "2015", "event": "Club Founded", "description": "Robotics Club established at NIT Patna", "icon": "Heart" },
-    { "year": "2017", "event": "First National Competition", "description": "Participated in ABU Robocon", "icon": "Award" },
-    { "year": "2019", "event": "100+ Members", "description": "Reached milestone of 100 active members", "icon": "Users" },
-    { "year": "2021", "event": "Research Lab", "description": "Dedicated robotics lab inaugurated", "icon": "Lightbulb" },
-    { "year": "2023", "event": "International Recognition", "description": "Projects featured in IEEE publications", "icon": "TrendingUp" },
-    { "year": "2025", "event": "AI Integration", "description": "Launched AI and ML focused initiatives", "icon": "Zap" }
+    { "year": "2015-16", "event": "Club Founded at NIT Patna", "description": "Founded under the guidance of Nripendra Saroj Sir.", "icon": "Heart" },
+    { "year": "2021", "event": "Online Community Events Scale-Up", "description": "Ran major online events and expanded student outreach.", "icon": "Users" },
+    { "year": "2022", "event": "Competitive Event Ecosystem Strengthened", "description": "Strengthened competition culture through practical bot events.", "icon": "Rocket" },
+    { "year": "2024", "event": "Technical Skill Growth & Major Fest Engagement", "description": "Boosted technical skills through workshops and fest activities.", "icon": "Lightbulb" },
+    { "year": "2026", "event": "Expansion into AI, Autonomous Systems & Drones", "description": "Expanded into AI, autonomy, and drone systems.", "icon": "Zap" }
   ],
   "testimonials": [
     {
@@ -34,9 +33,9 @@
     }
   ],
   "metrics": [
-    { "value": 100, "suffix": "+", "label": "Active Members", "description": "Across all branches and years" },
-    { "value": 50, "suffix": "+", "label": "Projects Built", "description": "Hardware, software & research" },
-    { "value": 25, "suffix": "+", "label": "Awards Won", "description": "National & international level" },
-    { "value": 10, "suffix": "+", "label": "Years of Legacy", "description": "Since our founding chapter" }
+    { "value": 100, "suffix": "+", "label": "Active Members", "description": "All branches and years" },
+    { "value": 50, "suffix": "+", "label": "Projects Built", "description": "Hardware, software, research" },
+    { "value": 25, "suffix": "+", "label": "Awards Won", "description": "National and international" },
+    { "value": 10, "suffix": "+", "label": "Years of Legacy", "description": "Since founding" }
   ]
 }
