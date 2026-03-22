@@ -6,6 +6,7 @@ export interface Project {
   id: number;
   title: string;
   description: string;
+  detailedDescription: string;
   image: string;
   category: string;
   tags: string[];
