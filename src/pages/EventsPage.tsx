@@ -26,6 +26,9 @@ export function EventsPage() {
     .map((block) => block.trim())
     .filter(Boolean);
 
+  const hasRegistrationLink = (registrationLink?: string) =>
+    Boolean(registrationLink && registrationLink.trim().length > 0);
+
   const handlePrevEvent = () => {
     if (selectedEventId === null || modalEvents.length === 0) return;
     const activeList = modalEvents.some((event) => event.id === selectedEventId) ? modalEvents : events;
@@ -148,11 +151,13 @@ export function EventsPage() {
                             <ZoomIn className="w-5 h-5 text-white" />
                           </div>
                         </div>
-                      {event.registrationOpen && (
+                      {event.status === 'Upcoming' && event.registrationOpen && (
                         <div className="absolute top-4 right-4">
-                          <span className="px-3 py-1.5 rounded-full text-xs font-bold bg-green-500/20 text-green-400 border border-green-500/30 backdrop-blur-sm flex items-center gap-1">
-                            <CheckCircle2 className="w-3 h-3" />
-                            Open for Registration
+                          <span className="px-3 py-1.5 rounded-full text-xs font-bold bg-zinc-950/85 text-white border border-white/35 shadow-lg shadow-black/50 backdrop-blur-md flex items-center gap-1.5">
+                            <CheckCircle2 className="w-3 h-3 text-emerald-300" />
+                            {hasRegistrationLink(event.registrationLink)
+                              ? 'Open for Registration'
+                              : 'Will be available soon'}
                           </span>
                         </div>
                       )}
@@ -185,7 +190,7 @@ export function EventsPage() {
                           <span className="text-muted-foreground">{event.capacity} participants</span>
                         </div>
                       </div>
-                      {event.registrationOpen && event.registrationLink && (
+                      {event.status === 'Upcoming' && event.registrationOpen && hasRegistrationLink(event.registrationLink) && (
                         <a href={event.registrationLink} target="_blank" rel="noopener noreferrer">
                           <Button size="lg" className="w-full rounded-xl group/btn">
                             Register Now
@@ -269,8 +274,8 @@ export function EventsPage() {
                         </div>
                         {event.registrationOpen && (
                           <div className="absolute top-3 right-3">
-                            <span className="px-2 py-1 rounded-full text-xs font-bold bg-green-500/20 text-green-400 border border-green-500/30 backdrop-blur-sm">
-                              Open
+                            <span className="px-2.5 py-1 rounded-full text-xs font-bold bg-zinc-950/85 text-white border border-white/35 shadow-md shadow-black/45 backdrop-blur-md">
+                              {hasRegistrationLink(event.registrationLink) ? 'Open' : 'Soon'}
                             </span>
                           </div>
                         )}
@@ -295,7 +300,7 @@ export function EventsPage() {
                             <span className="text-muted-foreground">{event.location}</span>
                           </div>
                         </div>
-                        {event.registrationOpen && event.registrationLink && (
+                        {event.registrationOpen && hasRegistrationLink(event.registrationLink) && (
                           <a href={event.registrationLink} target="_blank" rel="noopener noreferrer">
                             <Button size="sm" className="w-full rounded-lg group/btn">
                               Register
@@ -424,7 +429,9 @@ export function EventsPage() {
                     </span>
                     {selectedEvent.registrationOpen && (
                       <span className="px-3 py-1 rounded-full text-xs font-bold backdrop-blur-md shadow-lg ring-1 ring-white/20 bg-green-900/75 text-green-100 border border-green-300/35">
-                        Registration Open
+                        {hasRegistrationLink(selectedEvent.registrationLink)
+                          ? 'Registration Open'
+                          : 'Will be available soon'}
                       </span>
                     )}
                   </div>
@@ -468,7 +475,7 @@ export function EventsPage() {
 
                   <div className="flex flex-col sm:flex-row gap-3">
                     {selectedEvent.registrationOpen ? (
-                      selectedEvent.registrationLink ? (
+                      hasRegistrationLink(selectedEvent.registrationLink) ? (
                         <Button asChild className="rounded-xl">
                           <a href={selectedEvent.registrationLink} target="_blank" rel="noopener noreferrer">
                             Register Now
@@ -477,7 +484,7 @@ export function EventsPage() {
                         </Button>
                       ) : (
                         <Button disabled className="rounded-xl">
-                          Registration Open
+                          Will be available soon
                         </Button>
                       )
                     ) : (
