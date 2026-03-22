@@ -5,8 +5,7 @@ import {
   Twitter,
   Instagram,
   Mail,
-  MapPin,
-  Phone,
+  MapPin
 } from 'lucide-react';
 
 const footerLinks = {
