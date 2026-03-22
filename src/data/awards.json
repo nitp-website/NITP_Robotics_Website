@@ -101,10 +101,10 @@
     }
   ],
   "stats": [
-    { "label": "Awards Won", "value": "25+", "icon": "Trophy" },
-    { "label": "Competitions", "value": "40+", "icon": "Medal" },
-    { "label": "Research Papers", "value": "15+", "icon": "BookOpen" },
-    { "label": "Hackathon Wins", "value": "10+", "icon": "Star" }
+    { "label": "Awards Won", "value": "15+", "icon": "Trophy" },
+    { "label": "Patents", "value": "2+", "icon": "Medal" },
+    { "label": "Years", "value": "10+", "icon": "BookOpen" },
+    { "label": "Hackathon", "value": "8+", "icon": "Star" }
   ],
   "winningGallery": [
     {
