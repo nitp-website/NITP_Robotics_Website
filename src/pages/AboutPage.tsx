@@ -167,7 +167,7 @@ export function AboutPage() {
                 className="relative"
               >
                 <img
-                  src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&auto=format&fit=crop"
+                  src="https://res.cloudinary.com/dij1hpcld/image/upload/v1774165922/1770712263646_t6rodl.jpg"
                   alt="Robotics Lab"
                   className="rounded-3xl shadow-2xl w-full h-[500px] object-cover"
                 />

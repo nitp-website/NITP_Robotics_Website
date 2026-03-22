@@ -114,10 +114,10 @@ export function ProjectsPage() {
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent opacity-60" />
                         <div className="absolute top-4 right-4 flex gap-2">
-                          <span className={`px-3 py-1 rounded-full text-xs font-bold ${
+                          <span className={`px-3 py-1 rounded-full text-xs font-bold backdrop-blur-md shadow-lg ring-1 ring-white/20 ${
                             project.status === 'Completed' 
-                              ? 'bg-green-500/20 text-green-400 border border-green-500/30' 
-                              : 'bg-amber-500/20 text-amber-400 border border-amber-500/30'
+                              ? 'bg-emerald-900/75 text-emerald-100 border border-emerald-300/35' 
+                              : 'bg-amber-900/75 text-amber-100 border border-amber-300/35'
                           }`}>
                             {project.status}
                           </span>
@@ -228,10 +228,10 @@ export function ProjectsPage() {
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent opacity-60" />
                         <div className="absolute top-3 right-3">
-                          <span className={`px-2.5 py-1 rounded-full text-xs font-bold ${
+                          <span className={`px-2.5 py-1 rounded-full text-xs font-bold backdrop-blur-md shadow-md ring-1 ring-white/20 ${
                             project.status === 'Completed' 
-                              ? 'bg-green-500/20 text-green-400 border border-green-500/30' 
-                              : 'bg-amber-500/20 text-amber-400 border border-amber-500/30'
+                              ? 'bg-emerald-900/75 text-emerald-100 border border-emerald-300/35' 
+                              : 'bg-amber-900/75 text-amber-100 border border-amber-300/35'
                           }`}>
                             {project.status}
                           </span>
