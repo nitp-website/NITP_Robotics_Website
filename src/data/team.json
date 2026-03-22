@@ -12,7 +12,7 @@
   },
   "executives": [
     {
-      "name": "Pranav",
+      "name": "Pranav Kumar",
       "role": "President",
       "year": "Pre-Final Year, CSE",
       "image": "https://res.cloudinary.com/dij1hpcld/image/upload/v1774151486/Selfie_vb6ari.jpg",
@@ -51,6 +51,18 @@
       }
     },
     {
+      "name": "Aditya Narayan",
+      "role": "Joint Secretary",
+      "year": "Second Year, ECE",
+      "image": "https://res.cloudinary.com/dvravcbwk/image/upload/v1774153961/WhatsApp_Image_2026-03-17_at_2.35.50_PM_rjglcl.jpg",
+      "bio": "Ensuring smooth financial management",
+      "email": "adityan.dd24.ec@nitp.ac.in",
+      "social": {
+        "github": "https://github.com/aditya-narayan007",
+        "linkedin": "www.linkedin.com/in/narayanaditya178"
+      }
+    },
+    {
       "name": "Kumar Shourya",
       "role": "Joint Secretary",
       "year": "Second Year, CSE",
@@ -60,18 +72,6 @@
       "social": {
         "github": "https://github.com/KumarShourya001",
         "linkedin": "linkedin.com/in/kumar-shourya"
-      }
-    },
-    {
-      "name": "Aditya Narayan",
-      "role": "Coordinator",
-      "year": "Second Year, ECE",
-      "image": "https://res.cloudinary.com/dvravcbwk/image/upload/v1774153961/WhatsApp_Image_2026-03-17_at_2.35.50_PM_rjglcl.jpg",
-      "bio": "Ensuring smooth financial management",
-      "email": "adityan.dd24.ec@nitp.ac.in",
-      "social": {
-        "github": "https://github.com/aditya-narayan007",
-        "linkedin": "www.linkedin.com/in/narayanaditya178"
       }
     },
     {
