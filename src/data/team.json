@@ -85,6 +85,19 @@
         "github": "#",
         "linkedin": "#"
       }
+    },
+    {
+      "name": "Shreya Kumari",
+      "role": "Executive Member",
+      "year": "Third Year, ECE",
+      "image": "https://res.cloudinary.com/dij1hpcld/image/upload/v1774263774/6c705a65-6654-40cb-956a-cf4347ed63d9.png",
+      "bio": "Contributing to executive coordination and club initiatives.",
+      "email": "shreyak.ug23.ec@nitp.ac.in",
+      "social": {
+        "github": "https://github.com/Shreya0Kumari",
+        "linkedin": "https://www.linkedin.com/in/shreya-kumari-6b5410214",
+        "twitter": ""
+      }
     }
   ],
   "coreTeam": [

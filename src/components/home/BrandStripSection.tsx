@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 
 const logos = [
-  'NIT Patna', 'IIT Kharagpur', 'DRDO', 'ISRO', 'Kshitij', 'IEEE', 'NIT Jalandar',
+  'NIT Patna', 'IIT Kharagpur', 'DRDO', 'ISRO', 'DOT', 'Kshitij', 'IEEE', 'NIT Jalandar',
 ];
 
 export function BrandStripSection() {
