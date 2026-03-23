@@ -315,6 +315,9 @@ export function TeamPage() {
                         <h3 className="font-heading font-bold text-lg mb-1 group-hover:text-primary transition-colors truncate">{member.name}</h3>
                         <p className="text-primary text-sm font-semibold mb-1">{member.role}</p>
                         <p className="text-xs text-muted-foreground mb-2">{member.year}</p>
+                        {member.description && (
+                          <p className="text-xs text-muted-foreground mb-2 line-clamp-2">{member.description}</p>
+                        )}
                         <span className="inline-block px-3 py-1 bg-primary/10 text-primary text-xs rounded-full font-medium">
                           {member.domain}
                         </span>

@@ -7,7 +7,7 @@
     "image": "https://res.cloudinary.com/dij1hpcld/image/upload/v1774154151/f8737e5f7ea0b3cdb58a59397304c93389299353-1244x913_gifg5x.png",
     "category": "Autonomous",
     "tags": ["Arduino Uno", "Sharp Sensors", "IR Sensors", "LCD"],
-    "github": "https://github.com/lifeispranav",
+    "github": "https://github.com/aditya-narayan007/autonomous_wall_following_robot",
     "demo": "",
     "status": "Ongoing",
     "featured": true
@@ -20,7 +20,7 @@
     "image": "https://res.cloudinary.com/dij1hpcld/image/upload/v1774154150/m_ztupeq.png",
     "category": "Robotics",
     "tags": ["Bluetooth", "3D Printing", "Robotic Arm", "NRF"],
-    "github": "",
+    "github": "https://github.com/aditya-narayan007/Mark1.6/tree/main",
     "demo": "",
     "status": "Completed",
     "featured": true
@@ -33,7 +33,7 @@
     "image": "https://res.cloudinary.com/dij1hpcld/image/upload/v1774154145/da6f5fa1e22bfee348b662e1b658016b549fcb76-547x378_begghr.png",
     "category": "Autonomous",
     "tags": ["IR Sensors", "Embedded Systems", "Autonomous", "Motor Control"],
-    "github": "",
+    "github": "https://github.com/aditya-narayan007/line_follower/tree/main",
     "demo": "",
     "status": "Completed",
     "featured": true
