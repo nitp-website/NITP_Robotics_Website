@@ -55,7 +55,11 @@ export function CTASection() {
                 </Button>
               </Link>
               <Link to="/about">
-                <Button size="lg" variant="outline" className="px-8 py-3.5 text-base font-semibold rounded-xl border-2 border-white/30 text-white hover:bg-white/10 backdrop-blur-sm">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="px-8 py-3.5 text-base font-semibold rounded-xl border-2 border-white/60 bg-white/95 text-primary hover:bg-white dark:border-white/30 dark:bg-transparent dark:text-white dark:hover:bg-white/10 backdrop-blur-sm"
+                >
                   Learn more
                 </Button>
               </Link>

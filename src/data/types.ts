@@ -65,6 +65,7 @@ export interface TeamCoreMember {
   role: string;
   year: string;
   image: string;
+  description?: string;
   domain: string;
 }
 

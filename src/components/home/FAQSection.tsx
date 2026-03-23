@@ -21,7 +21,7 @@ const faqs = [
   },
   {
     q: 'Are there any membership fees?',
-    a: 'There\'s a nominal annual fee that covers components, materials, and lab access. We also secure funding from the institute and sponsors to subsidize major projects.',
+    a: 'No, there are no membership fees. Club participation is free for students, and major project expenses are supported through institute resources, events, and sponsorships when needed.',
   },
 ];
 

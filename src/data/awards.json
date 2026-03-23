@@ -178,8 +178,8 @@
     }
   ],
   "stats": [
-    { "label": "Awards Won", "value": "16", "icon": "Trophy" },
-    { "label": "Patents", "value": "2", "icon": "Medal" },
+    { "label": "Awards Won", "value": "16+", "icon": "Trophy" },
+    { "label": "Patents", "value": "2+", "icon": "Medal" },
     { "label": "Years", "value": "10+", "icon": "BookOpen" },
     { "label": "Hackathon", "value": "8+", "icon": "Star" }
   ],
