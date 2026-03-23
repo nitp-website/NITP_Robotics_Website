@@ -16,7 +16,7 @@
       "role": "President",
       "year": "Pre-Final Year, CSE",
       "image": "https://res.cloudinary.com/dij1hpcld/image/upload/v1774151486/Selfie_vb6ari.jpg",
-      "bio": "Leading organizational growth, technical initiatives, and collaborative projects across domains.",
+      "bio": "Leading organizational growth, technical initiatives, & collaborative projects",
       "email": "pranavk@nitp.ac.in",
       "social": {
         "github": "https://github.com/lifeispranav",
@@ -55,7 +55,7 @@
       "role": "Joint Secretary",
       "year": "Second Year, CSE",
       "image": "https://res.cloudinary.com/dvravcbwk/image/upload/v1774153986/WhatsApp_Image_2026-03-17_at_2.35.50_PM_1_i3bfgg.jpg",
-      "bio": "Ensuring smooth financial management",
+      "bio": "Coordinates team activities, streamlines communication, and supports smooth execution of club events.",
       "email": "kumarssh.ug24.cs@nitp.ac.in",
       "social": {
         "github": "https://github.com/KumarShourya001",
@@ -67,7 +67,7 @@
       "role": "Coordinator",
       "year": "Second Year, ECE",
       "image": "https://res.cloudinary.com/dvravcbwk/image/upload/v1774153961/WhatsApp_Image_2026-03-17_at_2.35.50_PM_rjglcl.jpg",
-      "bio": "Ensuring smooth financial management",
+      "bio": "Manages team coordination and communication flow to ensure events and initiatives run effectively.",
       "email": "adityan.dd24.ec@nitp.ac.in",
       "social": {
         "github": "https://github.com/aditya-narayan007",
@@ -79,7 +79,7 @@
       "role": "Coordinator",
       "year": "Second Year, ECE",
       "image": "https://res.cloudinary.com/dvravcbwk/image/upload/v1774153992/WhatsApp_Image_2026-03-17_at_2.35.49_PM_d1k6mt.jpg",
-      "bio": "Ensuring smooth financial management",
+      "bio": "Oversees communication and team operations to help deliver club events in an organized manner.",
       "email": "mohda.ug24.ec@nitp.ac.in",
       "social": {
         "github": "#",
@@ -88,7 +88,7 @@
     },
     {
       "name": "Shreya Kumari",
-      "role": "Executive Member",
+      "role": "Coordinator",
       "year": "Third Year, ECE",
       "image": "https://res.cloudinary.com/dij1hpcld/image/upload/v1774263774/6c705a65-6654-40cb-956a-cf4347ed63d9.png",
       "bio": "Contributing to executive coordination and club initiatives.",
@@ -153,6 +153,8 @@
     { "name": "Shivam Singh", "year": "First Year, CSE", "domain": "Technical" },
     { "name": "Nitin Singh", "year": "First Year, CSE", "domain": "Web Dev" },
     { "name": "Prem Kumar", "year": "First Year, CSE", "domain": "Computer Vision" },
-    { "name": "Niharika", "year": "First Year, ECE", "domain": "IoT" }
+    { "name": "Niharika", "year": "First Year, ECE", "domain": "IoT" },
+    { "name": "Kajal Kumar", "year": "Third Year, ECE", "domain": "Content Team" },
+    { "name": "Aditya Mishra", "year": "Second Year, ECE", "domain": "Technical" }
   ]
 }
