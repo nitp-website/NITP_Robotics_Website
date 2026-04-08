@@ -46,7 +46,7 @@ export function TeamPage() {
             className="text-center mb-12"
           >
             <span className="text-sm font-semibold text-primary uppercase tracking-wider">Leadership</span>
-            <h2 className="text-4xl font-heading font-bold mt-2 mb-2">Faculty Advisor</h2>
+            <h2 className="text-4xl font-heading font-bold mt-2 mb-2">Professor In-charge</h2>
             <p className="text-lg text-muted-foreground">Guiding our journey towards excellence</p>
           </motion.div>
 
@@ -55,137 +55,135 @@ export function TeamPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="max-w-4xl mx-auto"
+            className="w-full xl:max-w-7xl mx-auto"
           >
-            <Card className="overflow-hidden group border-2 hover:border-primary/30 premium-shadow relative transition-all duration-500 hover:shadow-2xl hover:-translate-y-2">
-              {/* Animated gradient background */}
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-purple-500/5 to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-              
-              {/* Floating orbs */}
-              <motion.div 
-                className="absolute top-10 right-10 w-32 h-32 bg-primary/10 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"
-                animate={{
-                  scale: [1, 1.2, 1],
-                  x: [0, 20, 0],
-                  y: [0, -20, 0],
-                }}
-                transition={{
-                  duration: 8,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-              />
-              <motion.div 
-                className="absolute bottom-10 left-10 w-40 h-40 bg-purple-500/10 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"
-                animate={{
-                  scale: [1, 1.3, 1],
-                  x: [0, -20, 0],
-                  y: [0, 20, 0],
-                }}
-                transition={{
-                  duration: 10,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-              />
-              
-              <CardContent className="p-0 relative z-10">
-                <div className="md:flex">
-                  <div className="relative overflow-hidden h-72 sm:h-96 md:h-auto md:min-h-[400px] md:w-2/5">
-                    <div className="absolute inset-0 scale-100 group-hover:scale-110 transition-transform duration-700 ease-out">
-                      <img
-                        src={teamData.pi.image}
-                        alt={teamData.pi.name}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    <div className="absolute inset-0 bg-gradient-to-t from-transparent via-transparent to-transparent dark:from-background dark:via-background/50 dark:to-transparent opacity-0 dark:opacity-60 group-hover:opacity-0 dark:group-hover:opacity-30 transition-opacity duration-500" />
-                  </div>
+            <div className="grid grid-cols-1 xl:grid-cols-2 gap-8">
+              {teamData.pi.map((advisor, index) => (
+                <Card key={index} className="overflow-hidden group border-2 hover:border-primary/30 premium-shadow relative transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 flex flex-col h-full">
+                  {/* Animated gradient background */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-purple-500/5 to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
                   
+                  {/* Floating orbs */}
                   <motion.div 
-                    className="p-10 md:w-3/5 relative group-hover:-translate-y-1 transition-transform duration-500"
-                    initial={{ opacity: 0, x: 20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.8, delay: 0.2 }}
-                  >
-                    <motion.div
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.6, delay: 0.3 }}
-                    >
-                      <h3 className="text-3xl font-heading font-bold mb-3 bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text group-hover:from-primary group-hover:to-primary/70 transition-all duration-500">{teamData.pi.name}</h3>
-                    </motion.div>
+                    className="absolute top-10 right-10 w-32 h-32 bg-primary/10 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"
+                    animate={{
+                      scale: [1, 1.2, 1],
+                      x: [0, 20, 0],
+                      y: [0, -20, 0],
+                    }}
+                    transition={{
+                      duration: 8,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                    }}
+                  />
+                  <motion.div 
+                    className="absolute bottom-10 left-10 w-40 h-40 bg-purple-500/10 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"
+                    animate={{
+                      scale: [1, 1.3, 1],
+                      x: [0, -20, 0],
+                      y: [0, 20, 0],
+                    }}
+                    transition={{
+                      duration: 10,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                    }}
+                  />
+                  
+                  <CardContent className="p-0 relative z-10 flex flex-col sm:flex-row h-full">
+                    <div className="relative overflow-hidden h-72 sm:h-auto sm:w-5/12 flex-shrink-0">
+                      <div className="absolute inset-0 scale-100 group-hover:scale-110 transition-transform duration-700 ease-out">
+                        <img
+                          src={advisor.image}
+                          alt={advisor.name}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                      <div className="absolute inset-0 bg-gradient-to-t from-transparent via-transparent to-transparent opacity-0 group-hover:opacity-10 transition-opacity duration-500" />
+                    </div>
                     
-                    <motion.p 
-                      className="text-primary font-semibold text-lg mb-2 group-hover:scale-105 transition-transform duration-300 origin-left"
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.6, delay: 0.4 }}
-                    >
-                      {teamData.pi.role}
-                    </motion.p>
-                    
-                    <motion.p 
-                      className="text-sm text-muted-foreground mb-6"
-                      initial={{ opacity: 0 }}
-                      whileInView={{ opacity: 1 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.6, delay: 0.5 }}
-                    >
-                      {teamData.pi.department}
-                    </motion.p>
-                    
-                    <motion.p 
-                      className="text-muted-foreground text-lg mb-8 leading-relaxed"
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.6, delay: 0.6 }}
-                    >
-                      {teamData.pi.bio}
-                    </motion.p>
-                    
-                    <motion.div 
-                      className="flex gap-3"
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.6, delay: 0.7 }}
-                    >
-                      <motion.a 
-                        whileHover={{ scale: 1.15, rotate: -5 }}
-                        whileTap={{ scale: 0.95 }}
-                        href={`mailto:${teamData.pi.email}`} 
-                        className="p-3 rounded-xl bg-accent hover:bg-primary hover:text-primary-foreground transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-primary/20"
+                    <div className="p-6 sm:p-8 sm:w-7/12 relative group-hover:-translate-y-1 transition-transform duration-500 flex flex-col justify-center">
+                      <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6, delay: 0.3 }}
                       >
-                        <Mail size={20} />
-                      </motion.a>
-                      <motion.a 
-                        whileHover={{ scale: 1.15, rotate: 5 }}
-                        whileTap={{ scale: 0.95 }}
-                        href={teamData.pi.social.linkedin} 
-                        className="p-3 rounded-xl bg-accent hover:bg-primary hover:text-primary-foreground transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-primary/20"
+                        <h3 className="text-2xl sm:text-3xl font-heading font-bold mb-2 bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text group-hover:from-primary group-hover:to-primary/70 transition-all duration-500">{advisor.name}</h3>
+                      </motion.div>
+                      
+                      <motion.p 
+                        className="text-primary font-semibold text-base sm:text-lg mb-2 group-hover:scale-105 transition-transform duration-300 origin-left"
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6, delay: 0.4 }}
                       >
-                        <Linkedin size={20} />
-                      </motion.a>
-                      {teamData.pi.social.twitter && (
+                        {advisor.role}
+                      </motion.p>
+                      
+                      <motion.p 
+                        className="text-xs sm:text-sm text-muted-foreground mb-4"
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6, delay: 0.5 }}
+                      >
+                        {advisor.department}
+                      </motion.p>
+                      
+                      <motion.p 
+                        className="text-sm sm:text-base text-muted-foreground mb-6 leading-relaxed"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6, delay: 0.6 }}
+                      >
+                        {advisor.bio}
+                      </motion.p>
+                      
+                      <motion.div 
+                        className="flex gap-2 sm:gap-3 mt-auto pt-2"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6, delay: 0.7 }}
+                      >
                         <motion.a 
                           whileHover={{ scale: 1.15, rotate: -5 }}
                           whileTap={{ scale: 0.95 }}
-                          href={teamData.pi.social.twitter} 
+                          href={`mailto:${advisor.email}`} 
                           className="p-3 rounded-xl bg-accent hover:bg-primary hover:text-primary-foreground transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-primary/20"
                         >
-                          <Twitter size={20} />
+                          <Mail size={20} />
                         </motion.a>
-                      )}
-                    </motion.div>
-                  </motion.div>
-                </div>
-              </CardContent>
-            </Card>
+                        {advisor.social.linkedin && (
+                          <motion.a 
+                            whileHover={{ scale: 1.15, rotate: 5 }}
+                            whileTap={{ scale: 0.95 }}
+                            href={advisor.social.linkedin} 
+                            className="p-3 rounded-xl bg-accent hover:bg-primary hover:text-primary-foreground transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-primary/20"
+                          >
+                            <Linkedin size={20} />
+                          </motion.a>
+                        )}
+                        {advisor.social.twitter && (
+                          <motion.a 
+                            whileHover={{ scale: 1.15, rotate: -5 }}
+                            whileTap={{ scale: 0.95 }}
+                            href={advisor.social.twitter} 
+                            className="p-3 rounded-xl bg-accent hover:bg-primary hover:text-primary-foreground transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-primary/20"
+                          >
+                            <Twitter size={20} />
+                          </motion.a>
+                        )}
+                      </motion.div>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
           </motion.div>
         </div>
       </section>

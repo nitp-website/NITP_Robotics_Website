@@ -76,7 +76,7 @@ export interface TeamMember {
 }
 
 export interface TeamData {
-  pi: TeamMemberPI;
+  pi: TeamMemberPI[];
   executives: TeamExecutive[];
   coreTeam: TeamCoreMember[];
   members: TeamMember[];
