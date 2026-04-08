@@ -1,21 +1,47 @@
 {
-  "pi": {
-    "name": "Dr. Anupam Kumar",
-    "role": "Professor In-charge",
-    "department": "Dept of Electronics and Communication Engineering",
-    "image": "https://res.cloudinary.com/dij1hpcld/image/upload/v1774150737/Screenshot_2026-03-22_at_9.08.46_AM_hhcalj.png",
-    "bio": "Leading research in robotics and automation with experience",
-    "email": "Anupam.ec@nitp.ac.in",
-    "social": {
-      "linkedin": "https://www.linkedin.com/in/dr-anupam-kumar-67435037"
+  "pi": [
+    {
+      "name": "Dr. Anupam Kumar",
+      "role": "PI (Bihta Campus)",
+      "department": "Dept of Electronics and Communication Engineering",
+      "image": "https://res.cloudinary.com/dij1hpcld/image/upload/v1774150737/Screenshot_2026-03-22_at_9.08.46_AM_hhcalj.png",
+      "bio": "Spearheading the development of next-gen automation and robotic architectures.",
+      "email": "Anupam.ec@nitp.ac.in",
+      "social": {
+        "linkedin": "https://www.linkedin.com/in/dr-anupam-kumar-67435037"
+      }
+    },
+    {
+      "name": "Dr. Golak Bihari Mahanta",
+      "role": "PI (Patna Campus)",
+      "department": "Mechatronics and Automation Engineering",
+      "image": "https://res.cloudinary.com/dij1hpcld/image/upload/v1775680338/IMG-20240805-WA0010_c3oz5d.jpg",
+      "bio": "Driving innovation in autonomous systems through end-to-end robotics research.",
+      "email": "advisor@nitp.ac.in",
+      "social": {
+        "linkedin": "#"
+      }
     }
-  },
+  ],
   "executives": [
     {
       "name": "Pranav",
       "role": "President",
       "year": "Pre-Final Year, CSE",
       "image": "https://res.cloudinary.com/dij1hpcld/image/upload/v1774151486/Selfie_vb6ari.jpg",
+      "bio": "Leading organizational growth, technical initiatives, & collaborative projects",
+      "email": "pranavk@nitp.ac.in",
+      "social": {
+        "github": "https://github.com/lifeispranav",
+        "linkedin": "https://www.linkedin.com/in/lifeispranav",
+        "twitter": ""
+      }
+    },
+    {
+      "name": "Sonu Kumar",
+      "role": "Vice President",
+      "year": "Pre-Final Year, EE",
+      "image": "https://res.cloudinary.com/dij1hpcld/image/upload/v1775680344/WhatsApp_Image_2026-02-14_at_14.55.43_sdlrwn.jpg",
       "bio": "Leading organizational growth, technical initiatives, & collaborative projects",
       "email": "pranavk@nitp.ac.in",
       "social": {
